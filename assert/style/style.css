@@ -1,0 +1,311 @@
+/* VARIÁVEIS GLOBAIS */
+:root {
+  /* Cores principais */
+  --color-primary: #163631;
+  --color-secondary: #86A193;
+  --color-background: #ffffff;
+  --color-text: #F5E28B;
+  --color-subtext: #B36B2S;
+  --color-border: #e2e8f0;
+  --color-input-bg: #f7fafc;
+  --color-shadow: rgba(0, 0, 0, 0.1);
+  --color-focus-shadow: rgba(102, 126, 234, 0.1);
+
+  /* Gradientes */
+  --gradient-bg: linear-gradient(135deg, var(--color-primary) 0%, #d8d8d8 100%);
+  --gradient-button: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+
+  /* Tipografia */
+  --font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --font-size-base: 1rem;
+  --font-size-title: 1.8rem;
+  --font-size-small: 0.85rem;
+
+  /* Espaçamentos e bordas */
+  --radius-lg: 24px;
+  --radius-md: 12px;
+  --padding-input: 14px 16px;
+  --padding-container: 40px;
+  --transition-default: 0.3s ease;
+  --transition-smooth: 0.8s ease;
+
+  /* Sombras */
+  --shadow-card: 0 20px 40px var(--color-shadow);
+  --shadow-button: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+/* RESET E BASE */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-family);
+}
+
+body {
+  background: var(--gradient-bg);
+  height: 100vh;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-text);
+
+}
+
+/* CONTAINER PRINCIPAL */
+.container {
+  width: 100%;
+  max-width: 1400px;
+  display: flex;
+  background: var(--color-background);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+  min-height: 50px;
+  position: relative;
+  transition: transform var(--transition-smooth);
+}
+
+/* EFEITOS DE TRANSIÇÃO */
+.container.cadastro-ativo .form-section {
+  transform: translateX(0);
+}
+
+.container.login-ativo .form-section {
+  transform: translateX(-100%);
+}
+
+.container.cadastro-ativo .image-section {
+  transform: translateX(0);
+}
+
+.container.login-ativo .image-section {
+  transform: translateX(100%);
+}
+
+/* SEÇÕES */
+.image-section,
+.form-section {
+  transition: transform var(--transition-smooth);
+  flex: 1;
+}
+
+/* SEÇÃO DA IMAGEM */
+.image-section {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay-text {
+  width: 100%;
+  height: 100%;
+}
+
+.overlay-text img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* SEÇÃO DO FORMULÁRIO */
+.form-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--padding-container);
+  background: var(--color-background);
+}
+
+.form-wrapper {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* LOGO */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 40px;
+  color: var(--color-text);
+}
+
+.logo-icon {
+  width: 40px;
+  height: 40px;
+  background: var(--gradient-button);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+/* FORMULÁRIOS */
+.form-card {
+  width: 100%;
+  display: none;
+  animation: cardEntrance 0.6s ease-out;
+}
+
+.form-card.active {
+  display: block;
+}
+
+.form-card h1 {
+  font-size: var(--font-size-title);
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--color-text);
+  text-align: center;
+}
+
+.form-card p {
+  margin-bottom: 30px;
+  font-size: var(--font-size-base);
+  color: var(--color-subtext);
+  text-align: center;
+  line-height: 1.5;
+}
+
+/* INPUTS */
+label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: #4a5568;
+  font-size: 14px;
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+  background: var(--color-input-bg);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--padding-input);
+  margin-bottom: 20px;
+  transition: all var(--transition-default);
+}
+
+.input-group:focus-within {
+  border-color: var(--color-primary);
+  background: var(--color-background);
+  box-shadow: 0 0 0 3px var(--color-focus-shadow);
+}
+
+input {
+  border: none;
+  outline: none;
+  flex: 1;
+  font-size: var(--font-size-base);
+  background: transparent;
+  color: var(--color-text);
+}
+
+/* BOTÕES */
+button {
+  width: 100%;
+  padding: 16px;
+  border: none;
+  border-radius: var(--radius-md);
+  background: var(--gradient-button);
+  color: #fff;
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-default);
+  margin-top: 10px;
+  box-shadow: var(--shadow-button);
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  margin-top: 30px;
+  width: 100%;
+}
+
+footer p {
+  margin-bottom: 15px;
+  color: var(--color-subtext);
+  font-size: 0.9rem;
+}
+
+footer a {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+footer a:hover {
+  color: var(--color-secondary);
+  text-decoration: underline;
+}
+
+.links {
+  margin-top: 20px;
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  font-size: var(--font-size-small);
+  color: #a0aec0;
+}
+
+/* ANIMAÇÕES */
+@keyframes cardEntrance {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+    margin: 20px;
+  }
+
+  .image-section,
+  .form-section {
+    transform: translateX(0) !important;
+  }
+}
+
+/* FOOTERS DINÂMICOS */
+.cadastro-footer {
+  display: block;
+}
+
+.login-footer {
+  display: none;
+}
+
+.container.login-ativo .cadastro-footer {
+  display: none;
+}
+
+.container.login-ativo .login-footer {
+  display: block;
+}
