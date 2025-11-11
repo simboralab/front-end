@@ -1,4 +1,4 @@
-# Simbora - Plataforma de conexão de pessoas através de eventos/atividades
+# Simbora App - Front-end
 
 Plataforma web para descobrir, conectar e celebrar momentos incríveis com amigos e novas pessoas.
 
