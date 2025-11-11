@@ -1,4 +1,4 @@
-# Simbora - Plataforma de Eventos
+# Simbora - Plataforma de conexão de pessoas através de eventos/atividades
 
 Plataforma web para descobrir, conectar e celebrar momentos incríveis com amigos e novas pessoas.
 
@@ -6,7 +6,7 @@ Este repositório contém os protótipos front-end convertidos em HTML/CSS, prep
 
 ---
 
-## Estrutura do Projeto
+## Estrutura do projeto
 
 ```
 tela-cadastro-login/
@@ -26,9 +26,9 @@ tela-cadastro-login/
 
 ---
 
-## Como Usar Este Repositório
+## Como usar este repositório
 
-### **Visualizar os Protótipos**
+### **Visualizar os protótipos**
 
 Abra o arquivo `index.html` no navegador para acessar a **Central do Front-end**, onde você pode:
 - Visualizar todos os módulos do projeto
@@ -40,7 +40,7 @@ Abra o arquivo `index.html` no navegador para acessar a **Central do Front-end**
 open index.html
 
 ```
-### **Estrutura CSS Modular**
+### **Estrutura CSS modular**
 
 O projeto usa CSS modular para facilitar manutenção e integração com Django:
 
@@ -60,7 +60,7 @@ O projeto usa CSS modular para facilitar manutenção e integração com Django:
 
 ---
 
-## Páginas Implementadas
+## Páginas implementadas
 
 ### 1. **Central do Front-end** (`index.html`)
 **Status:** Concluído
@@ -97,7 +97,7 @@ O projeto usa CSS modular para facilitar manutenção e integração com Django:
 
 ---
 
-## Como Contribuir
+## Como contribuir
 
 1. **Clone o repositório**
    ```bash
@@ -128,7 +128,7 @@ O projeto usa CSS modular para facilitar manutenção e integração com Django:
 
 ---
 
-## Contato e Suporte
+## Contato e suporte
 
 Para dúvidas ou sugestões sobre o projeto, entre em contato com a equipe de desenvolvimento.
 
