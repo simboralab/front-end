@@ -1,0 +1,438 @@
+/* 
+ * VARIÁVEIS - Roxo + Laranja (sem gradientes)
+ * Roxo como cor principal, Laranja como secundária/destaque
+ */
+:root {
+  --color-primary: #7C3AED;        /* Roxo - Ícones e elementos principais */
+  --color-secondary: #FF8C42;      /* Laranja - Detalhes e secundário */
+  --color-background: #FAF5FF;     /* Roxo claríssimo - Fundo */
+  --color-card-bg: #FFFFFF;        /* Branco - Cards */
+  --color-text: #2D2D2D;           /* Preto quase - Texto principal */
+  --color-text-light: #666;        /* Cinza - Texto secundário */
+  --color-button: #FF8C42;         /* Laranja - Botões principais */
+  --color-button-hover: #FF6B1A;   /* Laranja escuro - Hover */
+  --color-button-secondary: #E0E0E0; /* Cinza claro - Botões secundários */
+  --color-shadow: rgba(124, 58, 237, 0.15);
+  --color-shadow-hover: rgba(124, 58, 237, 0.25);
+  
+  --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --transition: 0.3s ease;
+  --radius: 15px;
+  --radius-sm: 10px;
+}
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-family);
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-text);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* CONTAINER */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* HEADER */
+.header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 15px;
+  color: var(--color-primary);
+}
+
+.logo h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.logo-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+  font-size: 30px;
+  transform: rotate(45deg);
+}
+
+.tagline {
+  font-size: 1.2rem;
+  color: var(--color-text-light);
+  font-weight: 300;
+}
+
+/* MAIN CONTENT */
+.main-content {
+  flex: 1;
+}
+
+.welcome-section {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.welcome-section h2 {
+  font-size: 2rem;
+  color: var(--color-text);
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.welcome-section p {
+  font-size: 1.1rem;
+  color: var(--color-text-light);
+  line-height: 1.6;
+}
+
+/* LEGEND */
+.legend {
+  margin-top: 30px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: var(--radius-sm);
+  border: 2px solid rgba(124, 58, 237, 0.2);
+  display: inline-block;
+}
+
+.legend-title {
+  font-weight: 600;
+  color: var(--color-text);
+  font-size: 0.95rem;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.legend-items {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  color: var(--color-text);
+}
+
+.legend-badge {
+  padding: 4px 8px;
+  border-radius: 5px;
+  font-size: 0.7rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* NAVIGATION CARDS */
+.navigation-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-bottom: 60px;
+}
+
+.card {
+  background: var(--color-card-bg);
+  border-radius: var(--radius);
+  padding: 35px 30px;
+  box-shadow: 0 4px 15px var(--color-shadow);
+  transition: all var(--transition);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px var(--color-shadow-hover);
+}
+
+/* STATUS BADGES - Acessíveis para daltonismo */
+.status-badge {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  padding: 5px 12px;
+  border-radius: 6px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  opacity: 0.95;
+}
+
+.status-badge i {
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+/* Verde - Alto contraste */
+.status-concluido {
+  background: #DCFCE7;
+  color: #065F46;
+  border: 2px solid #059669;
+  box-shadow: 0 2px 4px rgba(5, 150, 105, 0.2);
+}
+
+/* Laranja - Alto contraste (diferente do azul) */
+.status-em-andamento {
+  background: #FFF7ED;
+  color: #9A3412;
+  border: 2px solid #EA580C;
+  box-shadow: 0 2px 4px rgba(234, 88, 12, 0.2);
+}
+
+/* Azul - Alto contraste */
+.status-em-revisao {
+  background: #DBEAFE;
+  color: #1E3A8A;
+  border: 2px solid #2563EB;
+  box-shadow: 0 2px 4px rgba(37, 99, 235, 0.2);
+}
+
+.card-icon {
+  width: 70px;
+  height: 70px;
+  background: var(--color-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  color: white;
+  font-size: 30px;
+}
+
+.card h3 {
+  font-size: 1.5rem;
+  color: var(--color-text);
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.card p {
+  color: var(--color-text-light);
+  margin-bottom: 25px;
+  line-height: 1.5;
+  flex: 1;
+}
+
+/* BUTTONS */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 30px;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all var(--transition);
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: var(--color-button);
+  color: white;
+  box-shadow: 0 4px 12px rgba(255, 140, 66, 0.3);
+}
+
+.btn-primary:hover {
+  background: var(--color-button-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(255, 140, 66, 0.4);
+}
+
+.btn-secondary {
+  background: var(--color-button-secondary);
+  color: var(--color-text-light);
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.btn i {
+  font-size: 0.9rem;
+}
+
+/* FOOTER */
+.footer {
+  text-align: center;
+  padding: 30px 0;
+  margin-top: auto;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.footer-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: var(--transition);
+}
+
+.footer-links a:hover {
+  color: var(--color-secondary);
+  text-decoration: underline;
+}
+
+.footer-links span {
+  color: var(--color-text-light);
+}
+
+.copyright {
+  color: var(--color-text-light);
+  font-size: 0.9rem;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+  .container {
+    padding: 30px 15px;
+  }
+
+  .logo h1 {
+    font-size: 2rem;
+  }
+
+  .logo-icon {
+    width: 32px;
+    height: 32px;
+    font-size: 24px;
+  }
+
+  .tagline {
+    font-size: 1rem;
+  }
+
+  .welcome-section h2 {
+    font-size: 1.6rem;
+  }
+
+  .welcome-section p {
+    font-size: 1rem;
+  }
+
+  .legend {
+    padding: 15px;
+    display: block;
+  }
+
+  .legend-items {
+    gap: 15px;
+    justify-content: center;
+  }
+
+  .legend-item {
+    font-size: 0.85rem;
+  }
+
+  .navigation-cards {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .card {
+    padding: 30px 25px;
+  }
+
+  .card-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 26px;
+  }
+
+  .card h3 {
+    font-size: 1.3rem;
+  }
+
+  .footer-links {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    margin-bottom: 40px;
+  }
+
+  .welcome-section {
+    margin-bottom: 35px;
+  }
+
+  .legend {
+    padding: 12px;
+  }
+
+  .legend-title {
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+  }
+
+  .legend-items {
+    gap: 12px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .legend-item {
+    font-size: 0.8rem;
+  }
+
+  .btn {
+    padding: 12px 24px;
+    font-size: 0.95rem;
+  }
+
+  .status-badge {
+    top: 10px;
+    left: 10px;
+    padding: 3px 8px;
+    font-size: 0.65rem;
+    gap: 4px;
+  }
+
+  .status-badge i {
+    font-size: 0.6rem;
+  }
+}
+
