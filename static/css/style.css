@@ -2,7 +2,7 @@
 :root {
   /* Cores principais */
   --color-primary: #163631;
-  --color-secondary: #86A193;
+  --color-secondary: #ff0000;
   --color-background: #ffffff;
   --color-text: #F5E28B;
   --color-subtext: #B36B2S;
@@ -59,12 +59,12 @@ body {
   max-width: 1400px;
   display: flex;
   background: var(--color-background);
-  border-radius: var(--radius-lg);
   box-shadow: var(--shadow-card);
   overflow: hidden;
   min-height: 50px;
   position: relative;
   transition: transform var(--transition-smooth);
+  background-color: var()
 }
 
 /* EFEITOS DE TRANSIÇÃO */
@@ -88,7 +88,8 @@ body {
 .image-section,
 .form-section {
   transition: transform var(--transition-smooth);
-  flex: 1;
+  width: 50%;
+  flex: 0 0 50%;
 }
 
 /* SEÇÃO DA IMAGEM */
@@ -116,19 +117,27 @@ body {
 /* SEÇÃO DO FORMULÁRIO */
 .form-section {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: var(--padding-container);
   background: var(--color-background);
+  position: relative;
 }
 
-.form-wrapper {
-  width: 100%;
-  max-width: 400px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+        .form-wrapper {
+            width: 100%;
+            max-width: 420px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: clamp(30px, 5vw, 50px);
+            border-radius: var(--radius-lg);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
 
 /* LOGO */
 .logo {
