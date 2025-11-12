@@ -128,6 +128,8 @@ O projeto usa CSS modular para facilitar manutenção e integração com Django:
 
 ---
 
+## Revisão de Código
+
 ## Contato e suporte
 
 Para dúvidas ou sugestões sobre o projeto, entre em contato com a equipe de desenvolvimento.
