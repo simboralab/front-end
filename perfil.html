@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="perfil.css">
+    <title>Simbora - Tela Perfil</title>
+
+<body>
+    <header>
+        <h1>Editar Perfil</h1>
+        <div>
+            <button class="btn-salvar-perfil">Salvar</button>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="perfil-icon">
+            <img src="./static/images/img-perfil.png" alt="Imagem de perfil">
+        </div>
+        <div>
+            <button class="btn-alter-foto">Alterar foto</button>
+        </div>
+
+        <form action="#" method="post">
+            <h2>Informações Pessoais</h2>
+
+            <div>
+            <label for="nome-social">Nome Social</label>
+            <input type="text" name="nome-social" id="nome-social" placeholder="Escreva seu nome social" required>
+            </div>
+
+            <div>
+            <label for="cidade">Cidade</label>
+            <input type="text" name="cidade" id="cidade">
+            </div>
+            
+            <div>
+            <label for="estado">Estado</label>
+            <input type="text" name="estado" id="estado">
+            </div>
+
+            <div>
+            <label for="bio">Descrição(Bio)</label>
+            <textarea name="bio" id="bio" rows="5" placeholder="Descreva mais sobre você..."></textarea>
+            </div>
+
+            <br>
+
+            <h2>Identidade e Acessibilidade</h2>
+
+            <p>Gênero</p>
+            <div class="genero">
+                <select id="opcao-genero">
+                    <option value="mulher">Mulher</option>
+                    <option value="homem">Homem</option>
+                </select>
+            </div>
+
+            <div class="input-radio-sim">
+                <input type="radio" id="pcd" value="sim" />
+                <label for="pcd">Sou uma pessoa com deficiência(PCD)</label>
+                <p>Sinalize para que possamos sugerir eventos e
+                    locais acessíveis para você.</p>
+            </div>
+
+            <div class="input-radio-nao">
+                <input type="radio" id="neuro" value="nao">
+                <label for="neuro">Me identifico como neurodivergente</label>
+                <p>Ajuda a construir uma comunidade mais
+                    empática e a encontrar pessoas que te entendam.</p>
+            </div>
+
+            <button type="submit" value="enviar">Salvar Alterações</button>
+        </form>
+    </main>
+    <script src="static/js/script-form.js"></script>
+</body>
+
+</html>
