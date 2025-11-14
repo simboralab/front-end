@@ -4,6 +4,47 @@ Plataforma web para descobrir, conectar e celebrar momentos incríveis com amigo
 
 Este repositório contém os protótipos front-end convertidos em HTML/CSS, preparados para futura integração com Django.
 
+
+---
+
+## Como contribuir
+
+1. **Clone o repositório**
+
+- Acesse o terminal e digite o comando: 
+  
+   ```bash
+   git clone https://github.com/simboralab/front-end.git
+ 
+   ```
+- Abra o projeto no VSCode 
+  
+2. **Crie uma branch para sua feature**
+
+- Abra o terminal do VSCode 
+  
+   ```bash
+   git checkout -b <nome-da-sua-branch>
+   ```
+
+  *O nome da branch deve representar o que você está fazendo: Exemplo - feat/pagina-editar-perfil*
+
+1. **Desenvolva seguindo as convenções**
+   - Crie arquivos CSS separados para novas páginas
+   - Mantenha a paleta de cores consistente
+   - Teste em diferentes resoluções
+
+2. **Commit suas mudanças**
+   ```bash
+   git add <nome_do_arquivo>
+   git commit -m "<coloque-a-msg>"
+   ```
+
+3. **Push e crie Pull Request**
+   ```bash
+   git push origin <nome-da-sua-branch>
+   ```
+
 ---
 
 ## Estrutura do projeto
@@ -112,45 +153,7 @@ O projeto usa CSS modular para facilitar manutenção e integração com Django:
 
 **Tecnologias:** HTML5, CSS3, JavaScript, Font Awesome 6.4.0
 
----
 
-## Como contribuir
-
-1. **Clone o repositório**
-
-- Acesse o terminal e digite o comando: 
-  
-   ```bash
-   git clone https://github.com/simboralab/front-end.git
- 
-   ```
-- Abra o projeto no VSCode 
-  
-2. **Crie uma branch para sua feature**
-
-- Abra o terminal do VSCode 
-  
-   ```bash
-   git checkout -b feature/nome-da-feature
-   ```
-
-1. **Desenvolva seguindo as convenções**
-   - Crie arquivos CSS separados para novas páginas
-   - Mantenha a paleta de cores consistente
-   - Teste em diferentes resoluções
-
-2. **Commit suas mudanças**
-   ```bash
-   git add .
-   git commit -m "feat: adiciona página de perfil"
-   ```
-
-3. **Push e crie Pull Request**
-   ```bash
-   git push origin feature/nome-da-feature
-   ```
-
----
 
 ## Contato e suporte
 
