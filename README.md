@@ -18,7 +18,7 @@ tela-cadastro-login/
 │   │   └── style.css       # Estilos da autenticação
 │   ├── js/
 │   │   └── script-form.js  # Scripts do formulário de login/cadastro
-│   └── images/             # Imagens do projeto
+│   └── img/                # Imagens do projeto
 │       └── img.webp        
 ├── .gitignore              # Arquivos ignorados pelo Git
 └── README.md               # Este arquivo
@@ -28,7 +28,25 @@ tela-cadastro-login/
 
 ## Como usar este repositório
 
-### **Visualizar os protótipos**
+### **Opção 1: Desenvolvimento com Live Reload (Recomendado)**
+
+Para ter atualização automática ao salvar arquivos:
+
+```bash
+# Instalar dependências (primeira vez)
+npm install
+
+# Iniciar servidor com live reload
+npm start
+```
+
+O servidor abrirá automaticamente em `http://localhost:8080` e recarregará a página sempre que você salvar alterações em HTML, CSS ou JavaScript.
+
+**Scripts disponíveis:**
+- `npm start` - Inicia o servidor e abre automaticamente o `index.html`
+- `npm run dev` - Inicia o servidor monitorando todos os arquivos
+
+### **Opção 2: Visualização Simples**
 
 Abra o arquivo `index.html` no navegador para acessar a **Central do Front-end**, onde você pode:
 - Visualizar todos os módulos do projeto
@@ -38,7 +56,6 @@ Abra o arquivo `index.html` no navegador para acessar a **Central do Front-end**
 ```bash
 # Abrir no navegador
 open index.html
-
 ```
 ### **Estrutura CSS modular**
 
