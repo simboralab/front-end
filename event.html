@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <body>
+        <main class="container">
+            <h1>Criar Evento</h1>
+
+            <section class="form-section">
+                <h2>Informações básicas</h2>
+                <div class="form-group">
+                    <label>Nome do evento</label>
+                    <input type="text" placeholder="Ex: Correr na praia">
+                </div>
+
+                <div class="form-group">
+                    <label>Assunto</label>
+                    <select>
+                        <option selected>Selecione um assunto</option>
+                        <option>Reunião</option>
+                        <option>Festa</option>
+                        <option>Encontro</option>
+                    </select>
+                </div>
+            </section>
+
+            <section class="form-section">
+                <h2>Data e Horário</h2>
+                <div class="date-time">
+                    <div>
+                        <label>Data de Início</label>
+                        <input type="date">
+                    </div>
+                    <div>
+                        <label>Hora de Início</label>
+                        <input type="time">
+                    </div>
+                </div>
+
+                <div class="date-time">
+                    <div>
+                        <label>Data de Término</label>
+                        <input type="date">
+                    </div>
+                    <div>
+                        <label>Hora de Término</label>
+                        <input type="time">
+                    </div>
+                </div>
+            </section>
+
+            <section class="form-section">
+                <h2>Endereço do Evento</h2>
+                <div class="form-group">
+                    <label>Nome do local</label>
+                    <input type="text" placeholder="Ex: Orla de Olinda">
+                </div>
+
+                <div class="address-group">
+                    <div>
+                        <label>Endereço</label>
+                        <input type="text" placeholder="Ex: Av. Paulista">
+                    </div>
+                    <div>
+                        <label>Número</label>
+                        <input type="number" placeholder="1000">
+                    </div>
+                </div>
+
+                <div class="address-group">
+                    <div>
+                        <label>CEP</label>
+                        <input type="number" placeholder="00000-000">
+                    </div>
+                    <div>
+                        <label>Bairro</label>
+                        <input type="text" placeholder="Bela Vista">
+                    </div>
+                    <div>
+                        <label>Cidade</label>
+                        <input type="text" placeholder="São Paulo">
+                    </div>
+                </div>
+            </section>
+
+            <section class="form-section">
+                <h2>Informações de membro <span class="optional">(OPCIONAL)</span></h2>
+                <div class="address-group">
+                    <div>
+                        <label>Número mínimo de pessoas</label>
+                        <input type="number" placeholder="2">
+                    </div>
+                    <div>
+                        <label>Número máximo de pessoas</label>
+                        <input type="number" placeholder="10">
+                    </div>
+                </div>
+            </section>
+
+            <section class="form-section">
+                <h2>Descrição <span class="optional">(OPCIONAL)</span></h2>
+                <textarea placeholder="Adicione mais detalhes sobre o seu evento aqui..."></textarea>
+            </section>
+
+            <button class="btn">Criar evento</button>
+        </main>
+    </body>
+</body>
+
+</html>
