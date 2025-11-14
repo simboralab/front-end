@@ -1,24 +1,39 @@
 /* 
- * VARIÁVEIS - Roxo + Laranja (sem gradientes)
- * Roxo como cor principal, Laranja como secundária/destaque
+ * VARIÁVEIS - PALETA SIMBORA OFICIAL
+ * Azul (#004AAD) - Verde Limão (#CCEE52) - Laranja (#FA7625) - Amarelo (#FFD639)
  */
 :root {
-  --color-primary: #7C3AED;        /* Roxo - Ícones e elementos principais */
-  --color-secondary: #FF8C42;      /* Laranja - Detalhes e secundário */
-  --color-background: #FAF5FF;     /* Roxo claríssimo - Fundo */
-  --color-card-bg: #FFFFFF;        /* Branco - Cards */
-  --color-text: #2D2D2D;           /* Preto quase - Texto principal */
-  --color-text-light: #666;        /* Cinza - Texto secundário */
-  --color-button: #FF8C42;         /* Laranja - Botões principais */
-  --color-button-hover: #FF6B1A;   /* Laranja escuro - Hover */
-  --color-button-secondary: #E0E0E0; /* Cinza claro - Botões secundários */
-  --color-shadow: rgba(124, 58, 237, 0.15);
-  --color-shadow-hover: rgba(124, 58, 237, 0.25);
+  /* Cores oficiais Simbora */
+  --azul-principal: #004AAD;
+  --verde-limao: #CCEE52;
+  --laranja: #FA7625;
+  --amarelo: #FFD639;
   
-  --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  /* Cores de suporte */
+  --branco: #FFFFFF;
+  --cinza-claro: #F5F7FA;
+  --cinza-medio: #A0AEC0;
+  --cinza-escuro: #4A5568;
+  --texto-principal: #2D3748;
+  
+  /* Aplicação das cores */
+  --color-primary: var(--azul-principal);
+  --color-secondary: var(--verde-limao);
+  --color-accent: var(--laranja);
+  --color-background: var(--cinza-claro);
+  --color-card-bg: var(--branco);
+  --color-text: var(--texto-principal);
+  --color-text-light: var(--cinza-escuro);
+  --color-button: var(--verde-limao);
+  --color-button-hover: var(--laranja);
+  --color-button-secondary: #E0E0E0;
+  --color-shadow: rgba(0, 74, 173, 0.15);
+  --color-shadow-hover: rgba(0, 74, 173, 0.25);
+  
+  --font-family: 'Segoe UI', system-ui, -apple-system, 'Roboto', sans-serif;
   --transition: 0.3s ease;
-  --radius: 15px;
-  --radius-sm: 10px;
+  --radius: 20px;
+  --radius-sm: 12px;
 }
 
 /* RESET */
@@ -51,32 +66,25 @@ body {
 /* HEADER */
 .header {
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 20px;
 }
 
 .logo {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 15px;
-  color: var(--color-primary);
-}
-
-.logo h1 {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: var(--color-primary);
-}
-
-.logo-icon {
-  width: 40px;
-  height: 40px;
   display: flex;
-  align-items: center;
   justify-content: center;
-  color: var(--color-primary);
-  font-size: 30px;
-  transform: rotate(45deg);
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.logo-img {
+  height: 180px;
+  width: auto;
+  transition: transform 0.4s ease;
+  cursor: pointer;
+}
+
+.logo-img:hover {
+  transform: scale(1.08) rotate(2deg);
 }
 
 .tagline {
@@ -112,10 +120,11 @@ body {
 .legend {
   margin-top: 30px;
   padding: 20px;
-  background: rgba(255, 255, 255, 0.8);
+  background: var(--branco);
   border-radius: var(--radius-sm);
-  border: 2px solid rgba(124, 58, 237, 0.2);
+  border: 2px solid rgba(0, 74, 173, 0.15);
   display: inline-block;
+  box-shadow: 0 2px 8px rgba(0, 74, 173, 0.08);
 }
 
 .legend-title {
@@ -153,15 +162,15 @@ body {
 /* NAVIGATION CARDS */
 .navigation-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
   margin-bottom: 60px;
 }
 
 .card {
   background: var(--color-card-bg);
   border-radius: var(--radius);
-  padding: 35px 30px;
+  padding: 28px 24px;
   box-shadow: 0 4px 15px var(--color-shadow);
   transition: all var(--transition);
   display: flex;
@@ -193,60 +202,108 @@ body {
   opacity: 0.95;
 }
 
-.status-badge i {
-  font-size: 0.75rem;
-  font-weight: bold;
+.status-badge .material-symbols-rounded {
+  font-size: 0.85rem;
+  font-weight: 600;
 }
 
-/* Verde - Alto contraste */
+/* Verde Limão - Concluído */
 .status-concluido {
-  background: #DCFCE7;
-  color: #065F46;
-  border: 2px solid #059669;
-  box-shadow: 0 2px 4px rgba(5, 150, 105, 0.2);
+  background: #F0FADC;
+  color: #4A5F23;
+  border: 2px solid #CCEE52;
+  box-shadow: 0 2px 4px rgba(204, 238, 82, 0.25);
 }
 
-/* Laranja - Alto contraste (diferente do azul) */
+/* Laranja Simbora - Em Andamento */
 .status-em-andamento {
-  background: #FFF7ED;
-  color: #9A3412;
-  border: 2px solid #EA580C;
-  box-shadow: 0 2px 4px rgba(234, 88, 12, 0.2);
+  background: #FFF3EB;
+  color: #7A3110;
+  border: 2px solid #FA7625;
+  box-shadow: 0 2px 4px rgba(250, 118, 37, 0.25);
 }
 
-/* Azul - Alto contraste */
+/* Azul Simbora - Em Revisão */
 .status-em-revisao {
-  background: #DBEAFE;
-  color: #1E3A8A;
-  border: 2px solid #2563EB;
-  box-shadow: 0 2px 4px rgba(37, 99, 235, 0.2);
+  background: #E6F0FF;
+  color: #002B6B;
+  border: 2px solid #004AAD;
+  box-shadow: 0 2px 4px rgba(0, 74, 173, 0.25);
 }
 
 .card-icon {
-  width: 70px;
-  height: 70px;
-  background: var(--color-primary);
+  width: 65px;
+  height: 65px;
+  background: linear-gradient(135deg, var(--laranja) 0%, #E86618 100%);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
   color: white;
-  font-size: 30px;
+  font-size: 32px;
+  font-weight: 300;
+  box-shadow: 0 4px 12px rgba(250, 118, 37, 0.3);
+}
+
+/* Card especial - Autenticação (Concluído) em Verde Limão */
+.card:nth-child(1) .card-icon {
+  background: linear-gradient(135deg, var(--verde-limao) 0%, #B8D63F 100%);
+  color: var(--azul-principal);
+  box-shadow: 0 4px 12px rgba(204, 238, 82, 0.35);
+}
+
+/* Cards em andamento (Perfil e Eventos) - Laranja vibrante */
+.card:nth-child(2) .card-icon,
+.card:nth-child(3) .card-icon {
+  background: linear-gradient(135deg, var(--laranja) 0%, #E86618 100%);
+  color: white;
+  box-shadow: 0 4px 12px rgba(250, 118, 37, 0.3);
+  opacity: 1;
+  filter: none;
+}
+
+/* Efeito de desabilitado apenas nos cards que não iniciaram (4, 5, 6) */
+.card:nth-child(n+4) .card-icon {
+  opacity: 0.5;
+  filter: grayscale(30%);
+}
+
+.card:nth-child(n+4) {
+  opacity: 0.85;
+}
+
+.card:nth-child(n+4):hover {
+  opacity: 1;
+}
+
+.card:nth-child(n+4):hover .card-icon {
+  opacity: 0.65;
+}
+
+/* Ícones Material Symbols dentro dos cards */
+.card-icon .material-symbols-rounded {
+  font-size: 32px;
+  font-weight: 300;
+}
+
+.legend-badge .material-symbols-rounded {
+  font-size: inherit;
 }
 
 .card h3 {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   color: var(--color-text);
-  margin-bottom: 12px;
+  margin-bottom: 10px;
   font-weight: 600;
 }
 
 .card p {
   color: var(--color-text-light);
-  margin-bottom: 25px;
-  line-height: 1.5;
+  margin-bottom: 20px;
+  line-height: 1.4;
   flex: 1;
+  font-size: 0.95rem;
 }
 
 /* BUTTONS */
@@ -254,25 +311,27 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 14px 30px;
+  padding: 12px 26px;
   border-radius: var(--radius-sm);
   text-decoration: none;
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 0.95rem;
   transition: all var(--transition);
   cursor: pointer;
 }
 
 .btn-primary {
-  background: var(--color-button);
-  color: white;
-  box-shadow: 0 4px 12px rgba(255, 140, 66, 0.3);
+  background: var(--verde-limao);
+  color: var(--azul-principal);
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(204, 238, 82, 0.35);
 }
 
 .btn-primary:hover {
-  background: var(--color-button-hover);
+  background: var(--laranja);
+  color: var(--branco);
   transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(255, 140, 66, 0.4);
+  box-shadow: 0 6px 16px rgba(250, 118, 37, 0.4);
 }
 
 .btn-secondary {
@@ -282,8 +341,9 @@ body {
   opacity: 0.7;
 }
 
-.btn i {
-  font-size: 0.9rem;
+.btn .material-symbols-rounded {
+  font-size: 1rem;
+  vertical-align: middle;
 }
 
 /* FOOTER */
@@ -330,14 +390,8 @@ body {
     padding: 30px 15px;
   }
 
-  .logo h1 {
-    font-size: 2rem;
-  }
-
-  .logo-icon {
-    width: 32px;
-    height: 32px;
-    font-size: 24px;
+  .logo-img {
+    height: 150px;
   }
 
   .tagline {
@@ -372,17 +426,21 @@ body {
   }
 
   .card {
-    padding: 30px 25px;
+    padding: 24px 20px;
   }
 
   .card-icon {
-    width: 60px;
-    height: 60px;
+    width: 55px;
+    height: 55px;
+    font-size: 24px;
+  }
+  
+  .card-icon .material-symbols-rounded {
     font-size: 26px;
   }
 
   .card h3 {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
 
   .footer-links {
@@ -393,6 +451,10 @@ body {
 @media (max-width: 480px) {
   .header {
     margin-bottom: 40px;
+  }
+
+  .logo-img {
+    height: 130px;
   }
 
   .welcome-section {
@@ -431,8 +493,18 @@ body {
     gap: 4px;
   }
 
-  .status-badge i {
-    font-size: 0.6rem;
+  .status-badge .material-symbols-rounded {
+    font-size: 0.65rem;
+  }
+
+  .card-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 26px;
+  }
+  
+  .card-icon .material-symbols-rounded {
+    font-size: 28px;
   }
 }
 
