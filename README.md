@@ -117,28 +117,35 @@ O projeto usa CSS modular para facilitar manutenção e integração com Django:
 ## Como contribuir
 
 1. **Clone o repositório**
-   ```bash
-   git clone <url-do-repositorio>
-   cd tela-cadastro-login
-   ```
 
+- Acesse o terminal e digite o comando: 
+  
+   ```bash
+   git clone https://github.com/simboralab/front-end.git
+ 
+   ```
+- Abra o projeto no VSCode 
+  
 2. **Crie uma branch para sua feature**
+
+- Abra o terminal do VSCode 
+  
    ```bash
    git checkout -b feature/nome-da-feature
    ```
 
-3. **Desenvolva seguindo as convenções**
+1. **Desenvolva seguindo as convenções**
    - Crie arquivos CSS separados para novas páginas
    - Mantenha a paleta de cores consistente
    - Teste em diferentes resoluções
 
-4. **Commit suas mudanças**
+2. **Commit suas mudanças**
    ```bash
    git add .
    git commit -m "feat: adiciona página de perfil"
    ```
 
-5. **Push e crie Pull Request**
+3. **Push e crie Pull Request**
    ```bash
    git push origin feature/nome-da-feature
    ```
