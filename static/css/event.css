@@ -1,190 +1,172 @@
-:root {
-  --color-primary: #5d06ff;
-  --color-background: #ffaa00;
-  --color-container-bg: #fffaf0;
-  --color-text: #3c3c3c;
-  --color-heading: #4a4a4a;
-  --color-border: #e0dfd5;
-  --color-input-border: #ddd;
-  --color-focus-border: #d4b06a;
-  --color-focus-shadow: rgba(204, 170, 85, 0.4);
-  --color-optional: #a1a1a1;
-  --color-btn: #f7d97f;
-  --color-btn-hover: #f2ce5b;
-  --color-btn-text: #5b420d;
-}
-
-/* ===========================
-   RESET E CONFIGURAÇÕES GERAIS
-   =========================== */
-* {
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #fffaf0;
+  color: #2b2b2b;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
 }
-
-body {
-  background-color: var(--color-background);
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 20px;
-  color: var(--color-text);
-}
-
-/* Container principal */
+ 
 .container {
-  background-color: var(--color-container-bg);
-  width: 100%;
-  max-width: 650px;
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 20px;
 }
-
-/* Títulos */
-h1 {
-  color: var(--color-primary);
-  font-size: 1.7rem;
+ 
+.banner {
+  width: 100%;
+  height: 200px;
+  border-radius: 15px;
+  background: url('https://www.assai.com.br/sites/default/files/styles/blog_destaque/public/blog/pessoas_em_uma_festa_da_virada_vendo_um_show_de_fogos_de_artificio_de_ano_novo_-_assai_atacadista.jpg?itok=Qi2SSJyD')
+    center/cover no-repeat;
   margin-bottom: 20px;
 }
-
-h2 {
-  font-size: 1rem;
-  color: var(--color-heading);
-  margin-bottom: 12px;
-  font-weight: 600;
-}
-
-/* Seção do formulário */
-.form-section {
-  margin-bottom: 25px;
-  border-bottom: 1px solid var(--color-border);
-  padding-bottom: 20px;
-}
-
-/* Grupos de campos */
-.form-group {
-  display: flex;
-  flex-direction: column;
+ 
+h1 {
+  font-size: 1.8rem;
   margin-bottom: 15px;
 }
-
-label {
-  font-size: 0.9rem;
-  color: #333;
-  margin-bottom: 5px;
-}
-
-/* Inputs, selects e textarea */
-input, select, textarea {
-  width: 100%;
-  padding: 10px 14px;
-  border: 1px solid var(--color-input-border);
-  border-radius: 8px;
-  font-size: 1rem;
-  background-color: #fff;
-  transition: all 0.2s;
-}
-
-/* Estilo no foco */
-input:focus, select:focus, textarea:focus {
-  border-color: var(--color-focus-border);
-  outline: none;
-  box-shadow: 0 0 3px var(--color-focus-shadow);
-}
-
-/* Grupos que ficam lado a lado */
-.date-time, .address-group {
+ 
+.local {
   display: flex;
+  flex-direction: column;
   gap: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 25px;
+}
+ 
+.local-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.95rem;
+}
+ 
+.local-item i {
+  background: #004aad;
+  border-radius: 50%;
+  padding: 8px;
+}
+ 
+.confirma-box {
+  background-color: #8dbeff;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 25px;
+  text-align: center;
 }
 
-/* Textarea */
-textarea {
-  min-height: 100px;
-  resize: vertical;
+.progress-bar {
+  background-color: #004aad;
+  border-radius: 10px;
+  height: 8px;
+  margin: 10px 0;
+  position: relative;
+  overflow: hidden;
 }
-
-/* Texto opcional */
-.optional {
-  font-size: 0.8rem;
-  color: var(--color-optional);
-  font-weight: 400;
+ 
+.progress {
+  background-color: #ccee52;
+  width: 70%;
+  height: 100%;
+  border-radius: 10px;
 }
-
-/* Botão */
-.btn {
-  width: 100%;
-  background-color: var(--color-btn);
+ 
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 15px;
+}
+ 
+button {
   border: none;
-  color: var(--color-btn-text);
-  font-weight: 600;
+  border-radius: 25px;
+  padding: 10px 20px;
   font-size: 1rem;
-  padding: 12px 0;
-  border-radius: 8px;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: all 0.3s ease;
+}
+ 
+.btn-main {
+  background-color: #004aad;
+  font-weight: bold;
+  color: #fffaf0;
+}
+ 
+.btn-outline {
+  background-color: transparent;
+  border: 2px solid #004aad;
+  color: #ccee52;
+}
+ 
+.galera h3{
+  text-align: center;
+  margin-bottom: 25px;
+  color: #004aad;
+}
+ 
+.pessoas {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-top: 15px;
+  
+}
+ 
+.pessoa {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.9rem;
+  cursor: pointer;
 }
 
-.btn:hover {
-  background-color: var(--color-btn-hover);
+.pessoa img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 5px;
+  border: 3px solid #8dbeff;
 }
 
-/* ===========================
-      RESPONSIVIDADE
-   =========================== */
-
-/* 🔹 TELAS MUITO PEQUENAS (até 480px) */
-@media (max-width: 480px) {
-
-  /* reduz padding geral */
-  body {
-    padding: 10px;
-  }
-
-  /* reduz padding interno do container */
-  .container {
-    padding: 20px;
-  }
-
-  /* título menor */
-  h1 {
-    font-size: 1.5rem;
-  }
-
-  /* campos lado a lado viram coluna */
-  .date-time,
-  .address-group {
-    flex-direction: column;
-  }
+.pessoa img:hover{
+  border: 3px solid #ccee52;
+}
+ 
+.mais {
+  background-color: #e9ff9c;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+ 
+.sobre {
+  margin-bottom: 30px;
+  text-align: center;
 }
 
-/* 🔹 TELAS MÉDIAS (481px – 768px) */
-@media (max-width: 768px) {
-
-  /* ajusta padding do container */
-  .container {
-    padding: 25px;
-  }
-
-  /* título um pouco maior */
-  h1 {
-    font-size: 1.6rem;
-  }
+.sobre h3{
+  color:#004aad ;
 }
-
-/* 🔹 TELAS GRANDES (acima de 900px) */
-@media (min-width: 900px) {
-  /* aumenta título */
-  h1 {
-    font-size: 2rem;
-  }
-
-  /* inputs com fonte maior */
-  input, select, textarea {
-    font-size: 1rem;
-  }
+ 
+.final-btn {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  background-color: #8dbeff;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+ 
+.final-btn:hover {
+  background-color: #ffda3c;
 }
