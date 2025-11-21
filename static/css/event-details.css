@@ -1,32 +1,27 @@
 
-/* Sobrescrever body do style.css (que tem display:flex para login) */
-body {
-  display: block !important;
-  align-items: normal !important;
-  justify-content: normal !important;
-  min-height: auto !important;
-  padding-top: 0 !important;
-  /* Remove padding do header se houver */
-  background-color: #fffaf0 !important;
-  /* Fundo bege claro como na imagem */
+body:has(.main-header) {
+  display: block;
+  align-items: normal;
+  justify-content: normal;
+  min-height: auto;
+  padding-top: 0;
+  background-color: #fffaf0;
 }
 
 /* Ajuste do container para não conflitar com header */
-.main-header+.container {
+.main-header + .container {
   margin-top: 0;
 }
 
-/* Container específico da página */
-.container {
+.main-header ~ .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0;
-  width: 100% !important;
-  height: auto !important;
-  display: block !important;
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
-/* Banner do evento */
 .banner {
   width: 100%;
   height: 320px;
@@ -412,8 +407,8 @@ h1 {
 }
 
 .btn-confirmado {
-  background-color: var(--cinza-medio) !important;
-  color: var(--branco) !important;
+  background-color: var(--cinza-medio);
+  color: var(--branco);
   font-family: var(--font-body);
   font-weight: 700;
   letter-spacing: 0.5px;
