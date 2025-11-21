@@ -234,7 +234,7 @@ body {
 .card-icon {
   width: 65px;
   height: 65px;
-  background: linear-gradient(135deg, var(--laranja) 0%, #E86618 100%);
+  background: linear-gradient(135deg, var(--cinza-medio) 0%, #7C8B9F 100%); /* Default desaturado */
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -243,42 +243,29 @@ body {
   color: white;
   font-size: 32px;
   font-weight: 300;
-  box-shadow: 0 4px 12px rgba(250, 118, 37, 0.3);
-}
-
-/* Card especial - Autenticação (Concluído) em Verde Limão */
-.card:nth-child(1) .card-icon {
-  background: linear-gradient(135deg, var(--verde-limao) 0%, #B8D63F 100%);
-  color: var(--azul-principal);
-  box-shadow: 0 4px 12px rgba(204, 238, 82, 0.35);
-}
-
-/* Cards em andamento (Perfil e Eventos) - Laranja vibrante */
-.card:nth-child(2) .card-icon,
-.card:nth-child(3) .card-icon {
-  background: linear-gradient(135deg, var(--laranja) 0%, #E86618 100%);
-  color: white;
-  box-shadow: 0 4px 12px rgba(250, 118, 37, 0.3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra mais suave para o default */
   opacity: 1;
   filter: none;
+  transition: all var(--transition);
 }
 
-/* Efeito de desabilitado apenas nos cards que não iniciaram (4, 5, 6) */
-.card:nth-child(n+4) .card-icon {
-  opacity: 0.5;
-  filter: grayscale(30%);
+/* Estilos específicos para o ícone do card baseados no status do card */
+.card .status-concluido ~ .card-icon {
+    background: linear-gradient(135deg, var(--verde-limao) 0%, #B8D63F 100%);
+    color: var(--azul-principal);
+    box-shadow: 0 4px 12px rgba(204, 238, 82, 0.35);
 }
 
-.card:nth-child(n+4) {
-  opacity: 0.85;
+.card .status-em-revisao ~ .card-icon {
+    background: linear-gradient(135deg, var(--laranja) 0%, #E86618 100%); /* Laranja para revisão */
+    color: white;
+    box-shadow: 0 4px 12px rgba(250, 118, 37, 0.3);
 }
 
-.card:nth-child(n+4):hover {
-  opacity: 1;
-}
-
-.card:nth-child(n+4):hover .card-icon {
-  opacity: 0.65;
+.card .status-em-andamento ~ .card-icon {
+    background: linear-gradient(135deg, var(--laranja) 0%, #E86618 100%); /* Laranja para em andamento */
+    color: white;
+    box-shadow: 0 4px 12px rgba(250, 118, 37, 0.3);
 }
 
 /* Ícones Material Symbols dentro dos cards */
