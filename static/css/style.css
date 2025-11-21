@@ -17,8 +17,10 @@
   --cinza-escuro: #4A5568;
   --texto-principal: #2D3748;
   
-  /* Tipografia */
-  --font-family: 'Segoe UI', system-ui, -apple-system, 'Roboto', sans-serif;
+  /* Tipografia - Roboto Condensed + Poppins */
+  --font-heading: 'Roboto Condensed', sans-serif;
+  --font-body: 'Poppins', sans-serif;
+  --font-family: var(--font-body); /* Fallback padrão */
   --font-size-base: 16px;
   --font-size-small: 14px;
   --font-size-title: 32px;
@@ -48,7 +50,7 @@
 }
 
 body {
-  font-family: var(--font-family);
+  font-family: var(--font-body); /* Poppins */
   background: var(--cinza-claro);
   min-height: 100vh;
   display: flex;
@@ -56,6 +58,59 @@ body {
   justify-content: center;
   color: var(--texto-principal);
   overflow-x: hidden;
+}
+
+/* =============================================
+   TIPOGRAFIA - APLICAÇÃO DAS FONTES
+   ============================================= */
+
+/* Títulos - Roboto Condensed */
+h1, h2, h3, .form-card h1, .hero-text h2 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* Corpo de texto - Poppins */
+p, .form-card p, .hero-text p {
+  font-family: var(--font-body);
+  font-weight: 400;
+}
+
+/* Labels - Poppins médio */
+label {
+  font-family: var(--font-body);
+  font-weight: 500;
+}
+
+/* Formulários - Poppins */
+input, select, textarea {
+  font-family: var(--font-body);
+  font-weight: 400;
+}
+
+input::placeholder {
+  font-family: var(--font-body);
+  font-weight: 400;
+}
+
+/* Botões - Poppins com peso maior */
+button, .btn-primary {
+  font-family: var(--font-body);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+/* Links - Poppins */
+a {
+  font-family: var(--font-body);
+  font-weight: 500;
+}
+
+/* Footer */
+footer p {
+  font-family: var(--font-body);
+  font-weight: 400;
 }
 
 /* =============================================
@@ -146,14 +201,18 @@ body {
 }
 
 .hero-text h2 {
+  font-family: var(--font-heading);
   font-size: 40px;
   font-weight: 700;
+  letter-spacing: -0.02em;
   margin-bottom: 16px;
   line-height: 1.2;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .hero-text p {
+  font-family: var(--font-body);
+  font-weight: 300;
   font-size: 18px;
   line-height: 1.6;
   opacity: 0.95;
@@ -200,14 +259,18 @@ body {
 }
 
 .form-card h1 {
+  font-family: var(--font-heading);
   font-size: 40px;
   font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
   color: var(--azul-principal);
   margin-bottom: 8px;
   text-align: center;
 }
 
 .form-card p {
+  font-family: var(--font-body);
   font-size: 17px;
   color: var(--azul-principal);
   margin-bottom: 32px;
@@ -237,8 +300,9 @@ form {
 /* Labels */
 label {
   display: block;
+  font-family: var(--font-body);
   font-size: 15px;
-  font-weight: 600;
+  font-weight: 500;
   color: var(--azul-principal);
   margin-bottom: 10px;
 }
@@ -274,13 +338,40 @@ label {
   flex: 1;
   font-size: 16px;
   color: var(--azul-principal);
-  font-family: var(--font-family);
+  font-family: var(--font-body);
   font-weight: 400;
 }
 
 .input-group input::placeholder {
   color: #A0B4CC;
+  font-family: var(--font-body);
   font-weight: 400;
+}
+
+/* Estilos para select */
+.input-group select {
+  border: none;
+  outline: none;
+  background: transparent;
+  flex: 1;
+  font-size: 16px;
+  color: var(--azul-principal);
+  font-family: var(--font-body);
+  font-weight: 400;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.input-group select option {
+  background: var(--branco);
+  color: var(--azul-principal);
+  padding: 12px;
+}
+
+.input-group select:focus {
+  outline: none;
 }
 
 /* Ajuste para input de data */
@@ -300,6 +391,57 @@ label {
 }
 
 /* =============================================
+   CHECKBOX
+   ============================================= */
+
+.checkbox-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin: 20px 0;
+  padding: 0 4px;
+}
+
+.checkbox-container input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  margin-top: 2px;
+  cursor: pointer;
+  accent-color: var(--verde-limao);
+  flex-shrink: 0;
+}
+
+.checkbox-label {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--azul-principal);
+  line-height: 1.5;
+  cursor: pointer;
+  margin: 0;
+}
+
+.checkbox-label a {
+  color: var(--azul-principal);
+  text-decoration: underline;
+  font-weight: 500;
+  transition: color var(--transition);
+}
+
+.checkbox-label a:hover {
+  color: var(--laranja);
+}
+
+.checkbox-container.error input[type="checkbox"] {
+  accent-color: var(--laranja);
+}
+
+.checkbox-container.error .checkbox-label {
+  color: var(--laranja);
+}
+
+/* =============================================
    BOTÕES
    ============================================= */
 
@@ -309,8 +451,9 @@ label {
   padding: 18px 48px;
   background: var(--verde-limao);
   color: var(--azul-principal);
+  font-family: var(--font-body);
   font-size: 16px;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 0.8px;
   text-transform: uppercase;
   border: none;
@@ -341,6 +484,7 @@ footer {
 }
 
 footer p {
+  font-family: var(--font-body);
   font-size: 15px;
   color: var(--cinza-escuro);
   margin-bottom: 14px;
@@ -348,6 +492,7 @@ footer p {
 }
 
 footer a {
+  font-family: var(--font-body);
   color: var(--azul-principal);
   text-decoration: none;
   font-weight: 600;
@@ -546,6 +691,7 @@ footer a:hover {
   text-decoration: none;
   z-index: 100;
   border-radius: 0 0 4px 0;
+  font-family: var(--font-body);
   font-size: 14px;
 }
 
@@ -561,8 +707,10 @@ footer a:hover {
 
 .form-switch p {
   margin: 0;
-  color: var(--cinza-medio, #A0AEC0);
-  font-size: var(--font-size-small, 14px);
+  color: var(--cinza-escuro, #4A5568);
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 400;
 }
 
 .btn-link {
@@ -572,7 +720,7 @@ footer a:hover {
   text-decoration: underline;
   cursor: pointer;
   padding: 0;
-  font: inherit;
+  font-family: var(--font-body);
   font-weight: 600;
 }
 
@@ -595,12 +743,15 @@ footer a:hover {
 }
 
 .legal-links {
-  font-size: var(--font-size-small, 14px);
+  font-family: var(--font-body);
+  font-size: 13px;
   color: var(--cinza-medio, #A0AEC0);
 }
 
 .legal-links a {
-  color: inherit;
+  font-family: var(--font-body);
+  color: var(--cinza-medio, #A0AEC0);
+  font-weight: 400;
   text-decoration: none;
 }
 
@@ -611,6 +762,7 @@ footer a:hover {
 
 .legal-links span {
   margin: 0 8px;
+  color: var(--cinza-medio, #A0AEC0);
 }
 
 /* =============================================
@@ -670,6 +822,7 @@ footer a:hover {
 .error-message {
   display: block;
   color: var(--laranja, #FA7625);
+  font-family: var(--font-body);
   font-size: 12px;
   margin-top: 4px;
   min-height: 18px;
@@ -691,6 +844,7 @@ footer a:hover {
 .success-message {
   display: block;
   color: var(--verde-limao, #CCEE52);
+  font-family: var(--font-body);
   font-size: 12px;
   margin-top: 4px;
   min-height: 18px;
