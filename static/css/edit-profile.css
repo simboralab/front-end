@@ -6,7 +6,7 @@
     --radius-pill: 50px;
 }
 
-body:has(.main-header) {
+body.has-header {
     display: block;
     align-items: normal;
     justify-content: normal;
@@ -17,13 +17,6 @@ body:has(.main-header) {
     color: var(--texto-principal);
     min-height: 100vh;
     overflow-x: hidden;
-}
-
-.main-header ~ body,
-body:has(.main-header) {
-    display: block;
-    align-items: normal;
-    justify-content: normal;
 }
 
 .main-header ~ .container {

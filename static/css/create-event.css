@@ -2,8 +2,7 @@
    CRIAR EVENTO - ESTILOS ESPECÍFICOS
    ============================================= */
 
-/* Body quando há header - sobrescreve estilos do login sem !important */
-body:has(.main-header) {
+body.has-header {
     display: block;
     align-items: normal;
     justify-content: normal;
@@ -198,7 +197,6 @@ body:has(.main-header) {
     color: var(--texto-principal);
 }
 
-/* Tags - movido para style.css */
 
 /* Opcional */
 .form-wrapper-create .optional {
@@ -498,7 +496,6 @@ body:has(.main-header) {
     margin-left: auto;
 }
 
-/* Ações do formulário e botão cancelar - movidos para style.css */
 
 /* Botão de envio específico */
 .form-wrapper-create .btn-primary {
@@ -528,7 +525,6 @@ body:has(.main-header) {
     box-shadow: 0 6px 20px rgba(250, 118, 37, 0.3);
 }
 
-/* Footer - removido, usar estilos do event-details.css ou style.css */
 
 /* =============================================
    RESPONSIVIDADE
