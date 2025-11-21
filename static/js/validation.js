@@ -309,8 +309,8 @@ function initValidation() {
 // VALIDAÇÃO DO FORMULÁRIO DE LOGIN
 // =============================================
 
-const loginForm = document.querySelector('.login-form form');
-if (loginForm) {
+const loginFormElement = document.querySelector('.login-form form');
+if (loginFormElement) {
     const emailLogin = document.getElementById('id_email_login');
     
     // Validação de email no login (mesmo padrão do cadastro)
@@ -337,7 +337,7 @@ if (loginForm) {
     // Validação no submit do login
     const senhaLogin = document.getElementById('id_senha_login');
     
-    loginForm.addEventListener('submit', function(e) {
+    loginFormElement.addEventListener('submit', function(e) {
         let isValid = true;
         
         // Validar email
@@ -359,7 +359,7 @@ if (loginForm) {
         
         if (!isValid) {
             e.preventDefault();
-            const firstError = loginForm.querySelector('.error input');
+            const firstError = loginFormElement.querySelector('.error input');
             if (firstError) {
                 firstError.focus();
             }

@@ -53,9 +53,6 @@ body {
   font-family: var(--font-body); /* Poppins */
   background: var(--cinza-claro);
   min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   color: var(--texto-principal);
   overflow-x: hidden;
 }
@@ -117,172 +114,6 @@ footer p {
    CONTAINER PRINCIPAL
    ============================================= */
 
-.container {
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  background: var(--branco);
-  position: relative;
-  overflow: hidden;
-}
-
-/* =============================================
-   SEÇÃO DA IMAGEM (50% Esquerda)
-   ============================================= */
-
-.image-section {
-  position: relative;
-  width: 50%;
-  height: 100%;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--azul-principal);
-  transition: transform var(--transition-slow);
-}
-
-.bg-image {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  z-index: 1;
-}
-
-/* Gradiente sobre a imagem */
-.overlay-gradient {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    135deg,
-    rgba(0, 74, 173, 0.85) 0%,
-    rgba(138, 43, 226, 0.7) 50%,
-    rgba(250, 118, 37, 0.6) 100%
-  );
-  z-index: 2;
-  mix-blend-mode: multiply;
-}
-
-/* Logo Simbora no canto superior esquerdo */
-.logo-overlay {
-  position: absolute;
-  top: 40px;
-  left: 40px;
-  z-index: 4;
-}
-
-.logo-simbora {
-  width: 160px;
-  height: auto;
-  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3));
-  transition: transform 0.4s ease;
-  cursor: pointer;
-}
-
-.logo-simbora:hover {
-  transform: scale(1.08) rotate(2deg);
-}
-
-/* Texto hero na parte inferior */
-.hero-text {
-  position: absolute;
-  bottom: 60px;
-  left: 60px;
-  right: 60px;
-  z-index: 3;
-  color: var(--branco);
-}
-
-.hero-text h2 {
-  font-family: var(--font-heading);
-  font-size: 40px;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  margin-bottom: 16px;
-  line-height: 1.2;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-}
-
-.hero-text p {
-  font-family: var(--font-body);
-  font-weight: 300;
-  font-size: 18px;
-  line-height: 1.6;
-  opacity: 0.95;
-  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-  max-width: 500px;
-}
-
-/* =============================================
-   SEÇÃO DO FORMULÁRIO (50% Direita)
-   ============================================= */
-
-.form-section {
-  width: 50%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 60px 40px;
-  background: #F5F7FA;
-  overflow-y: auto;
-  transition: transform var(--transition-slow);
-}
-
-.form-wrapper {
-  width: 100%;
-  max-width: 640px;
-  background: var(--branco);
-  padding: 40px 48px;
-  border-radius: 24px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04);
-}
-
-/* =============================================
-   FORMULÁRIOS
-   ============================================= */
-
-.form-card {
-  display: none;
-  animation: fadeInUp 0.5s ease;
-}
-
-.form-card.active {
-  display: block;
-}
-
-.form-card h1 {
-  font-family: var(--font-heading);
-  font-size: 40px;
-  font-weight: 700;
-  letter-spacing: -0.03em;
-  line-height: 1.1;
-  color: var(--azul-principal);
-  margin-bottom: 8px;
-  text-align: center;
-}
-
-.form-card p {
-  font-family: var(--font-body);
-  font-size: 17px;
-  color: var(--azul-principal);
-  margin-bottom: 32px;
-  text-align: center;
-  line-height: 1.5;
-  font-weight: 400;
-}
-
-form {
-  margin-top: 0;
-}
-
 /* Layout de inputs em linha */
 .row-inputs {
   display: grid;
@@ -304,7 +135,7 @@ label {
   font-size: 15px;
   font-weight: 500;
   color: var(--azul-principal);
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 /* Inputs com ícones */
@@ -384,11 +215,7 @@ label {
   filter: invert(24%) sepia(96%) saturate(1969%) hue-rotate(197deg) brightness(93%) contrast(101%);
 }
 
-/* Inputs de linha única (login) */
-.form-card .input-group {
-  width: 100%;
-  margin-bottom: var(--spacing-sm);
-}
+/* Nota: Estilos específicos de .form-card movidos para account.css */
 
 /* =============================================
    CHECKBOX
@@ -475,206 +302,8 @@ label {
 }
 
 /* =============================================
-   FOOTER
+   FOOTER GERAL
    ============================================= */
-
-footer {
-  margin-top: 36px;
-  text-align: center;
-}
-
-footer p {
-  font-family: var(--font-body);
-  font-size: 15px;
-  color: var(--cinza-escuro);
-  margin-bottom: 14px;
-  font-weight: 400;
-}
-
-footer a {
-  font-family: var(--font-body);
-  color: var(--azul-principal);
-  text-decoration: none;
-  font-weight: 600;
-  transition: color var(--transition);
-}
-
-footer a:hover {
-  color: var(--laranja);
-}
-
-.links {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  margin-top: 20px;
-  font-size: 13px;
-  color: var(--cinza-medio);
-}
-
-.links span {
-  color: var(--cinza-medio);
-}
-
-.links a {
-  color: var(--cinza-medio);
-  font-weight: 400;
-  text-decoration: none;
-}
-
-.links a:hover {
-  color: var(--azul-principal);
-  text-decoration: underline;
-}
-
-/* =============================================
-   EFEITOS DE TRANSIÇÃO ENTRE LOGIN E CADASTRO
-   ============================================= */
-
-/* Estado padrão: Cadastro */
-.container.cadastro-ativo .form-section {
-  transform: translateX(0);
-}
-
-.container.cadastro-ativo .image-section {
-  transform: translateX(0);
-}
-
-/* Estado Login: Inverte as posições */
-.container.login-ativo .form-section {
-  transform: translateX(-100%);
-}
-
-.container.login-ativo .image-section {
-  transform: translateX(100%);
-}
-
-/* =============================================
-   CONTROLE DE VISIBILIDADE DOS FOOTERS
-   ============================================= */
-
-.cadastro-footer {
-  display: block;
-}
-
-.login-footer {
-  display: none;
-}
-
-.container.login-ativo .cadastro-footer {
-  display: none;
-}
-
-.container.login-ativo .login-footer {
-  display: block;
-}
-
-/* =============================================
-   ANIMAÇÕES
-   ============================================= */
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* =============================================
-   RESPONSIVIDADE
-   ============================================= */
-
-@media (max-width: 1200px) {
-  .hero-text h2 {
-    font-size: 32px;
-  }
-  
-  .hero-text p {
-    font-size: 16px;
-  }
-  
-  .form-section {
-    padding: 40px 30px;
-  }
-  
-  .form-wrapper {
-    padding: 40px 32px;
-  }
-}
-
-@media (max-width: 900px) {
-  .container {
-    flex-direction: column;
-    height: auto;
-  }
-  
-  .image-section,
-  .form-section {
-    width: 100%;
-    height: auto;
-  }
-  
-  .image-section {
-    min-height: 300px;
-    height: 40vh;
-  }
-  
-  .logo-overlay {
-    top: 24px;
-    left: 24px;
-  }
-  
-  .logo-simbora {
-    width: 120px;
-  }
-  
-  .hero-text {
-    bottom: 24px;
-    left: 24px;
-    right: 24px;
-  }
-  
-  .hero-text h2 {
-    font-size: 24px;
-  }
-  
-  .hero-text p {
-    font-size: 14px;
-  }
-  
-  .form-section {
-    padding: 32px 24px;
-  }
-  
-  .form-wrapper {
-    padding: 32px 24px;
-    border-radius: 20px;
-  }
-  
-  .row-inputs {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 600px) {
-  .form-card h1 {
-    font-size: 24px;
-  }
-  
-  .form-card p {
-    font-size: 16px;
-  }
-  
-  .btn-primary {
-    padding: 16px 24px;
-    font-size: 14px;
-  }
-}
 
 /* =============================================
    ACESSIBILIDADE E MELHORIAS
@@ -699,40 +328,6 @@ footer a:hover {
   top: 0;
 }
 
-/* Links de alternância entre formulários */
-.form-switch {
-  margin-top: 1rem;
-  text-align: center;
-}
-
-.form-switch p {
-  margin: 0;
-  color: var(--cinza-escuro, #4A5568);
-  font-family: var(--font-body);
-  font-size: 15px;
-  font-weight: 400;
-}
-
-.btn-link {
-  background: none;
-  border: none;
-  color: var(--azul-principal, #004AAD);
-  text-decoration: underline;
-  cursor: pointer;
-  padding: 0;
-  font-family: var(--font-body);
-  font-weight: 600;
-}
-
-.btn-link:hover {
-  color: var(--laranja, #FA7625);
-}
-
-.btn-link:focus {
-  outline: 2px solid var(--azul-principal, #004AAD);
-  outline-offset: 2px;
-  border-radius: 2px;
-}
 
 /* Footer legal */
 .form-footer {

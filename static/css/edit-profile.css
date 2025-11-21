@@ -2,11 +2,14 @@
    EDIT PROFILE - ESTILOS ESPECÍFICOS
    ============================================= */
 
-/* Sobrescrever body do style.css (que tem display:flex para login) */
-body {
-    display: block !important;
-    align-items: normal !important;
-    justify-content: normal !important;
+:root {
+    --radius-pill: 50px;
+}
+
+body.has-header {
+    display: block;
+    align-items: normal;
+    justify-content: normal;
     margin: 0;
     padding: 0;
     font-family: var(--font-body);
@@ -16,24 +19,18 @@ body {
     overflow-x: hidden;
 }
 
-/* Variáveis específicas adicionais se necessário */
-:root {
-    --radius-pill: 50px;
-}
-
-/* Container específico para edit-profile - sobrescreve o do style.css */
-.container {
-    width: 90% !important;
-    max-width: 1000px !important;
-    margin: 60px auto 40px auto !important;
-    background: var(--branco) !important;
-    padding: 40px !important;
-    border-radius: var(--radius-lg) !important;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05) !important;
-    height: auto !important;
-    display: block !important;
-    position: static !important;
-    overflow: visible !important;
+.main-header ~ .container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 60px auto 40px auto;
+    background: var(--branco);
+    padding: 40px;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+    height: auto;
+    display: block;
+    position: static;
+    overflow: visible;
 }
 
 /* Header interno da página */
@@ -297,11 +294,11 @@ input:checked+.slider:before {
 }
 
 @media (max-width: 600px) {
-    .container {
+    .main-header ~ .container {
         width: 95%;
         padding: 20px;
         margin: 20px auto;
-        max-width: 100% !important;
+        max-width: 100%;
     }
 
     .row {

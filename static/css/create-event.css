@@ -2,35 +2,34 @@
    CRIAR EVENTO - ESTILOS ESPECÍFICOS
    ============================================= */
 
-/* Sobrescrever body do style.css (que tem display:flex para login) */
-body {
-    display: block !important;
-    align-items: normal !important;
-    justify-content: normal !important;
-    min-height: auto !important;
-    padding-top: 0 !important;
-    background-color: var(--cinza-claro) !important;
+body.has-header {
+    display: block;
+    align-items: normal;
+    justify-content: normal;
+    min-height: auto;
+    padding-top: 0;
+    background-color: var(--cinza-claro);
     overflow-x: hidden;
 }
 
-/* Container específico para criar evento - sobrescreve o do style.css */
-main.container {
-    width: 100% !important;
-    height: auto !important;
-    display: block !important;
-    background: transparent !important;
-    padding: 40px var(--spacing-md) !important;
-    max-width: 1000px !important;
-    margin: 0 auto !important;
-    position: static !important;
-    overflow: visible !important;
+/* Container main específico para create-event - quando há header antes */
+.main-header ~ main.container {
+    width: 100%;
+    height: auto;
+    display: block;
+    background: transparent;
+    padding: 40px var(--spacing-md);
+    max-width: 1000px;
+    margin: 0 auto;
+    position: static;
+    overflow: visible;
 }
 
 /* Ajuste do container após header */
 .main-header + main.container {
     margin-top: 0;
-    padding-top: 40px !important;
-    padding-bottom: 40px !important;
+    padding-top: 40px;
+    padding-bottom: 40px;
 }
 
 /* Wrapper do Formulário */
@@ -70,14 +69,14 @@ main.container {
     margin-bottom: 32px;
     padding-bottom: 32px;
     border-bottom: 1px solid var(--cinza-claro);
-    width: 100% !important;
-    height: auto !important;
-    display: block !important;
-    background: transparent !important;
+    width: 100%;
+    height: auto;
+    display: block;
+    background: transparent;
     padding-left: 0;
     padding-right: 0;
     padding-top: 0;
-    overflow: visible !important;
+    overflow: visible;
 }
 
 .form-wrapper-create .form-section.no-border {
@@ -115,11 +114,11 @@ main.container {
 }
 
 .flex-2 {
-    flex: 2 !important;
+    flex: 2;
 }
 
 .flex-1 {
-    flex: 1 !important;
+    flex: 1;
 }
 
 /* Inputs com ícones (Reutilizando e adaptando estilos do style.css) */
@@ -198,7 +197,6 @@ main.container {
     color: var(--texto-principal);
 }
 
-/* Tags - movido para style.css */
 
 /* Opcional */
 .form-wrapper-create .optional {
@@ -498,7 +496,6 @@ main.container {
     margin-left: auto;
 }
 
-/* Ações do formulário e botão cancelar - movidos para style.css */
 
 /* Botão de envio específico */
 .form-wrapper-create .btn-primary {
@@ -528,15 +525,14 @@ main.container {
     box-shadow: 0 6px 20px rgba(250, 118, 37, 0.3);
 }
 
-/* Footer - removido, usar estilos do event-details.css ou style.css */
 
 /* =============================================
    RESPONSIVIDADE
    ============================================= */
 
 @media (max-width: 768px) {
-    main.container {
-        padding: 20px var(--spacing-sm) !important;
+    .main-header ~ main.container {
+        padding: 20px var(--spacing-sm);
     }
 
     .form-wrapper-create {

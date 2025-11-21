@@ -1,49 +1,47 @@
 
-/* Sobrescrever body do style.css (que tem display:flex para login) */
-body {
-  display: block !important;
-  align-items: normal !important;
-  justify-content: normal !important;
-  min-height: auto !important;
-  padding-top: 0 !important;
-  /* Remove padding do header se houver */
-  background-color: #fffaf0 !important;
-  /* Fundo bege claro como na imagem */
+body.has-header {
+  display: block;
+  align-items: normal;
+  justify-content: normal;
+  min-height: auto;
+  padding-top: 0;
+  background-color: var(--cinza-claro);
 }
 
 /* Ajuste do container para não conflitar com header */
-.main-header+.container {
+.main-header + .container {
   margin-top: 0;
 }
 
-/* Container específico da página */
-.container {
+.main-header ~ .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0;
-  width: 100% !important;
-  height: auto !important;
-  display: block !important;
+  width: 100%;
+  height: auto;
+  display: block;
+  background-color: var(--branco);
 }
 
-/* Banner do evento */
 .banner {
   width: 100%;
   height: 320px;
   border-radius: 0;
   background: url('https://www.assai.com.br/sites/default/files/styles/blog_destaque/public/blog/pessoas_em_uma_festa_da_virada_vendo_um_show_de_fogos_de_artificio_de_ano_novo_-_assai_atacadista.jpg?itok=Qi2SSJyD') center/cover no-repeat;
-  margin-bottom: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .container>*:not(.banner) {
   padding-left: var(--spacing-md);
   padding-right: var(--spacing-md);
+  max-width: 100%;
 }
 
 .event-header {
   margin-bottom: var(--spacing-lg);
   padding-top: var(--spacing-md);
+  padding-bottom: var(--spacing-sm);
 }
 
 .event-status {
@@ -188,12 +186,14 @@ h1 {
 
 .confirma-box {
   background-color: var(--azul-principal);
-
   padding-top: 3rem;
   padding-right: var(--spacing-xl);
   padding-bottom: calc(var(--spacing-xl) * 1.5);
   padding-left: var(--spacing-xl);
+  margin-left: var(--spacing-md);
+  margin-right: var(--spacing-md);
   margin-bottom: var(--spacing-xl);
+  border-radius: var(--radius-lg);
   box-shadow: 0 6px 20px rgba(0, 74, 173, 0.2);
 }
 
@@ -412,8 +412,8 @@ h1 {
 }
 
 .btn-confirmado {
-  background-color: var(--cinza-medio) !important;
-  color: var(--branco) !important;
+  background-color: var(--cinza-medio);
+  color: var(--branco);
   font-family: var(--font-body);
   font-weight: 700;
   letter-spacing: 0.5px;
@@ -475,6 +475,10 @@ h1 {
 
 .galera {
   margin-bottom: var(--spacing-lg);
+  padding: var(--spacing-lg);
+  background-color: var(--branco);
+  border-radius: var(--radius-md);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .galera h3 {
@@ -542,6 +546,10 @@ h1 {
 .sobre {
   margin-top: var(--spacing-lg);
   margin-bottom: var(--spacing-xl);
+  padding: var(--spacing-lg);
+  background-color: var(--branco);
+  border-radius: var(--radius-md);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   text-align: left;
 }
 
@@ -599,9 +607,11 @@ h1 {
 }
 
 .info-importante {
-  background-color: transparent;
-  padding: var(--spacing-md);
+  background-color: var(--branco);
+  padding: var(--spacing-lg);
   margin-bottom: var(--spacing-xl);
+  border-radius: var(--radius-md);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .info-importante h3 {
