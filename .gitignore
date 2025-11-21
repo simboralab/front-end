@@ -1,0 +1,22 @@
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Environment variables
+.env
+.env.local
+
+# Node modules (caso use ferramentas de build)
+node_modules/
+package-lock.json
+yarn.lock
+
+# Outros
+*.bak
+*.tmp
+.cache/
+

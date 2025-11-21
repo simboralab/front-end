@@ -1,0 +1,57 @@
+.categorias-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    background-color: #f9f9f9;
+    min-height: 100vh;
+}
+
+.categoria-btn {
+    font-size: 18px;
+    font-weight: 600;
+    padding: 14px 40px;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.25);
+    letter-spacing: 1px;
+    transition: opacity 0.2s, transform 0.2s;
+    min-width: 180px;
+}
+
+.categoria-btn:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+
+/* Cores individuais */
+.azul {
+    background-color: #0F47AF;
+    color: white;
+}
+
+.verde {
+    background-color: #CCEE52;
+    color: #0F47AF;
+}
+
+    .laranja {
+        background-color: #FA7625;
+        color: white;
+    }
+
+    .amarelo {
+        background-color: #FFD639;
+        color: #0F47AF;
+    }
+
+    /* Botão branco com borda azul forte */
+    .branco {
+        background-color: #FDFAE9;
+        color: #0F47AF;
+        border: 1px solid #0F47AF;
+        /* <-- borda azul exatamente da cor do botão principal */
+    }

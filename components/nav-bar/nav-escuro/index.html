@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <img src="image.png" alt="Logo">
+
+            <!-- Menu Desktop (visível APENAS em telas maiores) -->
+            <ul class="menu">
+                <li><a href="#" class="active">Início</a></li>
+                <li><a href="#">Buscar</a></li>
+                <li><a href="#">Explorar</a></li>
+                <li><a href="#">Criar evento</a></li>
+            </ul>
+
+            <div class="profile">
+                <img src="Mask group.png" alt="profile">
+                <div class="info">
+                    <span class="name">Ana Julia</span>
+                    <span class="pronoun">Ela/Dela</span>
+                </div>
+            </div>
+
+            <!-- Menu Hamburguer (visível APENAS no mobile) -->
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <!-- Menu Mobile (visível APENAS quando aberto no mobile) -->
+            <div class="mobile-menu" id="mobileMenu">
+                <a href="#" class="active">Início</a>
+                <a href="#">Buscar</a>
+                <a href="#">Explorar</a>
+                <a href="#">Criar evento</a>
+            </div>
+        </nav>
+    </header>
+    <script src="../script-menu-maburguer.js"></script>
+</body>
+
+</html>

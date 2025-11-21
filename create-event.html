@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/create-event.css">
+    <title>Criar Evento</title>
+</head>
+
+<body> 
+    <main class="container">
+        <h1>Criar Evento</h1>
+
+        <form> 
+            <section class="form-section">
+                <h2>Informações básicas</h2>
+                <div class="form-group">
+                    <label for="event-name">Nome do evento</label>
+                    <input type="text" id="event-name" name="event_name" placeholder="Ex: Correr na praia" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="subject">Assunto</label>
+                    <select id="subject" name="subject" required>
+                        <option value="" selected disabled>Selecione um assunto</option>
+                        <option value="reuniao">Reunião</option>
+                        <option value="festa">Festa</option>
+                        <option value="encontro">Encontro</option>
+                    </select>
+                </div>
+            </section>
+
+            <section class="form-section">
+                <h2>Data e Horário</h2>
+                <div class="date-time">
+                    <div>
+                        <label for="start-date">Data de Início</label>
+                        <input type="date" id="start-date" name="start_date" required>
+                    </div>
+                    <div>
+                        <label for="start-time">Hora de Início</label>
+                        <input type="time" id="start-time" name="start_time" required>
+                    </div>
+                </div>
+
+                <div class="date-time">
+                    <div>
+                        <label for="end-date">Data de Término</label>
+                        <input type="date" id="end-date" name="end_date" required>
+                    </div>
+                    <div>
+                        <label for="end-time">Hora de Término</label>
+                        <input type="time" id="end-time" name="end_time" required>
+                    </div>
+                </div>
+            </section>
+
+            <section class="form-section">
+                <h2>Endereço do Evento</h2>
+                <div class="form-group">
+                    <label for="location-name">Nome do local</label>
+                    <input type="text" id="location-name" name="location_name" placeholder="Ex: Orla de Olinda" required>
+                </div>
+
+                <div class="address-group">
+                    <div>
+                        <label for="address">Endereço</label>
+                        <input type="text" id="address" name="address" placeholder="Ex: Av. Paulista" required>
+                    </div>
+                    <div>
+                        <label for="number">Número</label>
+                        <input type="number" id="number" name="number" placeholder="1000" required>
+                    </div>
+                </div>
+
+                <div class="address-group">
+                    <div>
+                        <label for="cep">CEP</label>
+                        <input type="text" id="cep" name="cep" placeholder="00000-000" pattern="\d{5}-\d{3}" required>
+                    </div>
+                    <div>
+                        <label for="neighborhood">Bairro</label>
+                        <input type="text" id="neighborhood" name="neighborhood" placeholder="Bela Vista" required>
+                    </div>
+                    <div>
+                        <label for="city">Cidade</label>
+                        <input type="text" id="city" name="city" placeholder="São Paulo" required>
+                    </div>
+                </div>
+            </section>
+
+            <section class="form-section">
+                <h2>Informações de membro <span class="optional">(OPCIONAL)</span></h2>
+                <div class="address-group">
+                    <div>
+                        <label for="min-people">Número mínimo de pessoas</label>
+                        <input type="number" id="min-people" name="min_people" placeholder="2" min="1">
+                    </div>
+                    <div>
+                        <label for="max-people">Número máximo de pessoas</label>
+                        <input type="number" id="max-people" name="max_people" placeholder="10" min="1">
+                    </div>
+                </div>
+            </section>
+
+            <section class="form-section">
+                <h2>Descrição <span class="optional">(OPCIONAL)</span></h2>
+                <textarea id="description" name="description" placeholder="Adicione mais detalhes sobre o seu evento aqui..."></textarea>
+            </section>
+
+            <button type="submit" class="btn">Criar evento</button>
+        </form>
+    </main>
+</body>
+
+</html>

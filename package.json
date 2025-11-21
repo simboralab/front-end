@@ -1,0 +1,16 @@
+{
+  "name": "projeto-integrador-frontend",
+  "version": "1.0.0",
+  "description": "Frontend do Projeto Integrador SENAC",
+  "scripts": {
+    "start": "live-server --port=8080 --open=index.html",
+    "dev": "live-server --port=8080 --watch=."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}
+

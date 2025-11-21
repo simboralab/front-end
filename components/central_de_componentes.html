@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Central de Componentes - Simbora</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <style>
+    /* 
+     * VARIÁVEIS - PALETA SIMBORA OFICIAL
+     * Azul (#004AAD) - Verde Limão (#CCEE52) - Laranja (#FA7625) - Amarelo (#FFD639)
+     */
+    :root {
+      /* Cores oficiais Simbora */
+      --azul-principal: #004AAD;
+      --verde-limao: #CCEE52;
+      --laranja: #FA7625;
+      --amarelo: #FFD639;
+      
+      /* Cores de suporte */
+      --branco: #FFFFFF;
+      --cinza-claro: #F5F7FA;
+      --cinza-medio: #A0AEC0;
+      --cinza-escuro: #4A5568;
+      --texto-principal: #2D3748;
+      
+      /* Aplicação das cores */
+      --color-primary: var(--azul-principal);
+      --color-secondary: var(--verde-limao);
+      --color-accent: var(--laranja);
+      --color-background: var(--cinza-claro);
+      --color-card-bg: var(--branco);
+      --color-text: var(--texto-principal);
+      --color-text-light: var(--cinza-escuro);
+      --color-button: var(--verde-limao);
+      --color-button-hover: var(--laranja);
+      --color-button-secondary: #E0E0E0;
+      --color-shadow: rgba(0, 74, 173, 0.15);
+      --color-shadow-hover: rgba(0, 74, 173, 0.25);
+      
+      --font-family: 'Segoe UI', system-ui, -apple-system, 'Roboto', sans-serif;
+      --transition: 0.3s ease;
+      --radius: 20px;
+      --radius-sm: 12px;
+    }
+
+    /* RESET */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: var(--font-family);
+    }
+
+    body {
+      background: var(--color-background);
+      color: var(--color-text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* CONTAINER */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      width: 100%;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* HEADER */
+    .header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .logo-img {
+      height: 180px;
+      width: auto;
+      transition: transform 0.4s ease;
+      cursor: pointer;
+    }
+
+    .logo-img:hover {
+      transform: scale(1.08) rotate(2deg);
+    }
+
+    .tagline {
+      font-size: 1.2rem;
+      color: var(--color-text-light);
+      font-weight: 300;
+    }
+
+    /* MAIN CONTENT */
+    .main-content {
+      flex: 1;
+    }
+
+    .welcome-section {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .welcome-section h2 {
+      font-size: 2rem;
+      color: var(--color-text);
+      margin-bottom: 15px;
+      font-weight: 600;
+    }
+
+    .welcome-section p {
+      font-size: 1.1rem;
+      color: var(--color-text-light);
+      line-height: 1.6;
+    }
+
+    /* LEGEND */
+    .legend {
+      margin-top: 30px;
+      padding: 20px;
+      background: var(--branco);
+      border-radius: var(--radius-sm);
+      border: 2px solid rgba(0, 74, 173, 0.15);
+      display: inline-block;
+      box-shadow: 0 2px 8px rgba(0, 74, 173, 0.08);
+    }
+
+    .legend-title {
+      font-weight: 600;
+      color: var(--color-text);
+      font-size: 0.95rem;
+      display: block;
+      margin-bottom: 12px;
+    }
+
+    .legend-items {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.9rem;
+      color: var(--color-text);
+    }
+
+    .legend-badge {
+      padding: 4px 8px;
+      border-radius: 5px;
+      font-size: 0.7rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* NAVIGATION CARDS */
+    .navigation-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      margin-bottom: 60px;
+    }
+
+    .card {
+      background: var(--color-card-bg);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      box-shadow: 0 4px 15px var(--color-shadow);
+      transition: all var(--transition);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      position: relative;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px var(--color-shadow-hover);
+    }
+
+    /* STATUS BADGES - Acessíveis para daltonismo */
+    .status-badge {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      padding: 5px 12px;
+      border-radius: 6px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      opacity: 0.95;
+    }
+
+    .status-badge .material-symbols-rounded {
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    /* Verde Limão - Concluído */
+    .status-concluido {
+      background: #F0FADC;
+      color: #4A5F23;
+      border: 2px solid #CCEE52;
+      box-shadow: 0 2px 4px rgba(204, 238, 82, 0.25);
+    }
+
+    /* Laranja Simbora - Em Andamento */
+    .status-em-andamento {
+      background: #FFF3EB;
+      color: #7A3110;
+      border: 2px solid #FA7625;
+      box-shadow: 0 2px 4px rgba(250, 118, 37, 0.25);
+    }
+
+    /* Azul Simbora - Em Revisão */
+    .status-em-revisao {
+      background: #E6F0FF;
+      color: #002B6B;
+      border: 2px solid #004AAD;
+      box-shadow: 0 2px 4px rgba(0, 74, 173, 0.25);
+    }
+
+    .card-icon {
+      width: 65px;
+      height: 65px;
+      background: linear-gradient(135deg, var(--laranja) 0%, #E86618 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+      color: white;
+      font-size: 32px;
+      font-weight: 300;
+      box-shadow: 0 4px 12px rgba(250, 118, 37, 0.3);
+    }
+
+    /* Card especial - Autenticação (Concluído) em Verde Limão */
+    .card:nth-child(1) .card-icon {
+      background: linear-gradient(135deg, var(--verde-limao) 0%, #B8D63F 100%);
+      color: var(--azul-principal);
+      box-shadow: 0 4px 12px rgba(204, 238, 82, 0.35);
+    }
+
+    /* Cards em andamento (Perfil e Eventos) - Laranja vibrante */
+    .card:nth-child(2) .card-icon,
+    .card:nth-child(3) .card-icon {
+      background: linear-gradient(135deg, var(--laranja) 0%, #E86618 100%);
+      color: white;
+      box-shadow: 0 4px 12px rgba(250, 118, 37, 0.3);
+      opacity: 1;
+      filter: none;
+    }
+
+    /* Efeito de desabilitado apenas nos cards que não iniciaram (4, 5, 6) */
+    .card:nth-child(n+4) .card-icon {
+      opacity: 0.5;
+      filter: grayscale(30%);
+    }
+
+    .card:nth-child(n+4) {
+      opacity: 0.85;
+    }
+
+    .card:nth-child(n+4):hover {
+      opacity: 1;
+    }
+
+    .card:nth-child(n+4):hover .card-icon {
+      opacity: 0.65;
+    }
+
+    /* Ícones Material Symbols dentro dos cards */
+    .card-icon .material-symbols-rounded {
+      font-size: 32px;
+      font-weight: 300;
+    }
+
+    .legend-badge .material-symbols-rounded {
+      font-size: inherit;
+    }
+
+    .card h3 {
+      font-size: 1.3rem;
+      color: var(--color-text);
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    .card p {
+      color: var(--color-text-light);
+      margin-bottom: 20px;
+      line-height: 1.4;
+      flex: 1;
+      font-size: 0.95rem;
+    }
+
+    /* BUTTONS */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 26px;
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: all var(--transition);
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--verde-limao);
+      color: var(--azul-principal);
+      font-weight: 700;
+      box-shadow: 0 4px 12px rgba(204, 238, 82, 0.35);
+    }
+
+    .btn-primary:hover {
+      background: var(--laranja);
+      color: var(--branco);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(250, 118, 37, 0.4);
+    }
+
+    .btn-secondary {
+      background: var(--color-button-secondary);
+      color: var(--color-text-light);
+      cursor: not-allowed;
+      opacity: 0.7;
+    }
+
+    .btn .material-symbols-rounded {
+      font-size: 1rem;
+      vertical-align: middle;
+    }
+
+    /* FOOTER */
+    .footer {
+      text-align: center;
+      padding: 30px 0;
+      margin-top: auto;
+      border-top: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    .footer-links {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 15px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: var(--color-primary);
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: var(--transition);
+    }
+
+    .footer-links a:hover {
+      color: var(--color-secondary);
+      text-decoration: underline;
+    }
+
+    .footer-links span {
+      color: var(--color-text-light);
+    }
+
+    .copyright {
+      color: var(--color-text-light);
+      font-size: 0.9rem;
+    }
+
+    /* RESPONSIVIDADE */
+    @media (max-width: 768px) {
+      .container {
+        padding: 30px 15px;
+      }
+
+      .logo-img {
+        height: 150px;
+      }
+
+      .tagline {
+        font-size: 1rem;
+      }
+
+      .welcome-section h2 {
+        font-size: 1.6rem;
+      }
+
+      .welcome-section p {
+        font-size: 1rem;
+      }
+
+      .legend {
+        padding: 15px;
+        display: block;
+      }
+
+      .legend-items {
+        gap: 15px;
+        justify-content: center;
+      }
+
+      .legend-item {
+        font-size: 0.85rem;
+      }
+
+      .navigation-cards {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .card {
+        padding: 24px 20px;
+      }
+
+      .card-icon {
+        width: 55px;
+        height: 55px;
+        font-size: 24px;
+      }
+      
+      .card-icon .material-symbols-rounded {
+        font-size: 26px;
+      }
+
+      .card h3 {
+        font-size: 1.2rem;
+      }
+
+      .footer-links {
+        font-size: 0.85rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .header {
+        margin-bottom: 40px;
+      }
+
+      .logo-img {
+        height: 130px;
+      }
+
+      .welcome-section {
+        margin-bottom: 35px;
+      }
+
+      .legend {
+        padding: 12px;
+      }
+
+      .legend-title {
+        font-size: 0.85rem;
+        margin-bottom: 10px;
+      }
+
+      .legend-items {
+        gap: 12px;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .legend-item {
+        font-size: 0.8rem;
+      }
+
+      .btn {
+        padding: 12px 24px;
+        font-size: 0.95rem;
+      }
+
+      .status-badge {
+        top: 10px;
+        left: 10px;
+        padding: 3px 8px;
+        font-size: 0.65rem;
+        gap: 4px;
+      }
+
+      .status-badge .material-symbols-rounded {
+        font-size: 0.65rem;
+      }
+
+      .card-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 26px;
+      }
+      
+      .card-icon .material-symbols-rounded {
+        font-size: 28px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="logo">
+        <h1 style="color: var(--azul-principal); font-size: 2.5rem;">Simbora</h1>
+      </div>
+      <p class="tagline">Central de Componentes Front-end</p>
+    </header>
+
+    <main class="main-content">
+      <section class="welcome-section">
+        <h2>Biblioteca de Componentes</h2>
+        <p>Aqui você encontra todos os componentes reutilizáveis do sistema Simbora.</p>
+        <p>Use esta página para navegar entre os componentes e testar sua implementação.</p>
+
+        <div class="legend">
+          <span class="legend-title">Status dos componentes:</span>
+          <div class="legend-items">
+            <span class="legend-item">
+              <span class="legend-badge status-concluido">
+                <span class="material-symbols-rounded">check_circle</span>
+              </span>
+              Concluído
+            </span>
+            <span class="legend-item">
+              <span class="legend-badge status-em-revisao">
+                <span class="material-symbols-rounded">visibility</span>
+              </span>
+              Em Revisão
+            </span>
+            <span class="legend-item">
+              <span class="legend-badge status-em-andamento">
+                <span class="material-symbols-rounded">autorenew</span>
+              </span>
+              Em Andamento
+            </span>
+          </div>
+        </div>
+      </section>
+
+      <section class="navigation-cards">
+        <div class="card">
+          <span class="status-badge status-concluido">
+            <span class="material-symbols-rounded">check_circle</span>
+          </span>
+          <div class="card-icon">
+            <span class="material-symbols-rounded">view_carousel</span>
+          </div>
+          <h3>Navegação</h3>
+          <p>Navbar, menus, breadcrumbs e tabs</p>
+          <a href="nav-bar/nav-claro/index.html" class="btn btn-primary">
+            Modo claro <span class="material-symbols-rounded">arrow_forward</span>
+          </a>
+          <a href="nav-bar/nav-escuro/index.html" class="btn btn-primary">
+            Modo escuro <span class="material-symbols-rounded">arrow_forward</span>
+          </a>
+        </div>
+
+        <div class="card">
+          <span class="status-badge status-concluido">
+            <span class="material-symbols-rounded">check_circle</span>
+          </span>
+          <div class="card-icon">
+            <span class="material-symbols-rounded">touch_app</span>
+          </div>
+          <h3>Botões</h3>
+          <p>Botões primários, secundários e estados</p>
+          <a href="botoes_categorias/categorias.html" class="btn btn-primary">
+            Ver Componentes <span class="material-symbols-rounded">arrow_forward</span>
+          </a>
+        </div>
+
+        <div class="card">
+          <span class="status-badge status-concluido">
+            <span class="material-symbols-rounded">visibility</span>
+          </span>
+          <div class="card-icon">
+            <span class="material-symbols-rounded">dashboard</span>
+          </div>
+          <h3>Cards</h3>
+          <p>Cards de evento, perfil e conteúdo</p>
+          <a href="card-events/card-editar-deletar-event/events.html" class="btn btn-primary">
+            Editar e deletar eventos <span class="material-symbols-rounded">arrow_forward</span>
+          </a>
+          <a href="card-events/card-participar-event/events.html" class="btn btn-primary">
+            Participar de eventos <span class="material-symbols-rounded">arrow_forward</span>
+          </a>
+            <a href="card-events/card-vizu-event/index.html" class="btn btn-primary">
+            Vizualizar eventos <span class="material-symbols-rounded">arrow_forward</span>
+          </a>
+        </div>
+
+        <div class="card">
+          <span class="status-badge status-em-revisao">
+            <span class="material-symbols-rounded">visibility</span>
+          </span>
+          <div class="card-icon">
+            <span class="material-symbols-rounded">tune</span>
+          </div>
+          <h3>Formulários</h3>
+          <p>Inputs, selects, checkboxes e validação</p>
+          <a href="#" class="btn btn-primary">
+            Ver Componentes <span class="material-symbols-rounded">arrow_forward</span>
+          </a>
+        </div>
+
+        <div class="card">
+          <span class="status-badge status-em-andamento">
+            <span class="material-symbols-rounded">autorenew</span>
+          </span>
+          <div class="card-icon">
+            <span class="material-symbols-rounded">notifications</span>
+          </div>
+          <h3>Feedback</h3>
+          <p>Alertas, modais e notificações</p>
+          <a href="#" class="btn btn-primary">
+            Ver Componentes <span class="material-symbols-rounded">arrow_forward</span>
+          </a>
+        </div>
+
+        <div class="card">
+          <span class="status-badge status-em-andamento">
+            <span class="material-symbols-rounded">autorenew</span>
+          </span>
+          <div class="card-icon">
+            <span class="material-symbols-rounded">view_list</span>
+          </div>
+          <h3>Listas</h3>
+          <p>Listas de eventos, usuários e atividades</p>
+          <a href="#" class="btn btn-primary">
+            Ver Componentes <span class="material-symbols-rounded">arrow_forward</span>
+          </a>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">
+            <span class="material-symbols-rounded">palette</span>
+          </div>
+          <h3>Cores & Tipografia</h3>
+          <p>Guia de cores e hierarquia textual</p>
+          <a href="#" class="btn btn-secondary">
+            Em breve <span class="material-symbols-rounded">lock</span>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-links">
+        <a href="#">Documentação</a>
+        <span>•</span>
+        <a href="#">GitHub</a>
+        <span>•</span>
+        <a href="#">Design System</a>
+      </div>
+      <p class="copyright">&copy; 2025 Simbora App. Todos os direitos reservados.</p>
+    </footer>
+  </div>
+</body>
+<script src="nav-bar/script-menu-maburguer.js"></script>
+</html>

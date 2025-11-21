@@ -1,0 +1,99 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #f0f0f0;
+    padding: 40px;
+}
+
+/* CARD */
+.card-evento2 {
+    width: 430px;
+    max-width: 100%;
+    background: #fff;
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    margin: 0 auto;
+}
+
+/* IMAGEM */
+.card2-img {
+    width: 100%;
+    overflow: hidden;
+}
+
+.card2-img img {
+    width: 100%;
+    height: auto;     
+    display: block;
+}
+
+/* CONTEÚDO */
+.card2-info {
+    padding: 25px 22px 35px;
+}
+
+.card2-data {
+    font-size: 15px;
+    font-weight: 600;
+    color: #ff7a00;
+    letter-spacing: .5px;
+    margin-bottom: 8px;
+}
+
+.card2-titulo {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.card2-local {
+    color: #9a9a9a;
+    font-size: 16px;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+}
+
+/* BOTÃO */
+.card2-btn {
+    display: block;
+    width: 210px;
+    margin: 0 auto;
+    background: #0053ce;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 15px 0;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    letter-spacing: 2px;
+    transition: .2s;
+}
+
+.card2-btn:hover {
+    background: #003f9d;
+}
+
+/* RESPONSIVO */
+@media (max-width: 500px) {
+    body {
+        padding: 20px;
+    }
+
+    .card-evento2 {
+        border-radius: 16px;
+    }
+
+    .card2-titulo {
+        font-size: 20px;
+    }
+
+    .card2-local {
+        font-size: 14px;
+    }
+
+    .card2-btn {
+        width: 180px;
+        font-size: 16px;
+    }
+}
