@@ -9,7 +9,7 @@
 
 // Prevenir tooltips nativos do navegador, mas manter validação HTML5
 document.addEventListener('DOMContentLoaded', function() {
-    const inputs = document.querySelectorAll('input[required]');
+    const inputs = document.querySelectorAll('input[required], select[required]');
     
     inputs.forEach(input => {
         // Prevenir tooltip padrão, mas manter validação
@@ -20,10 +20,16 @@ document.addEventListener('DOMContentLoaded', function() {
             this.setCustomValidity(' ');
         }, true);
         
-        // Limpar validação customizada quando começar a digitar
-        input.addEventListener('input', function() {
-            this.setCustomValidity('');
-        });
+        // Limpar validação customizada quando começar a digitar ou mudar
+        if (input.type === 'checkbox') {
+            input.addEventListener('change', function() {
+                this.setCustomValidity('');
+            });
+        } else {
+            input.addEventListener('input', function() {
+                this.setCustomValidity('');
+            });
+        }
     });
 });
 
@@ -43,10 +49,16 @@ function showError(inputId, messageId, message) {
     
     const errorSpan = document.getElementById(messageId);
     const inputContainer = input.closest('.input-container');
+    const checkboxContainer = input.closest('.checkbox-container');
     
     if (inputContainer) {
         inputContainer.classList.remove('success');
         inputContainer.classList.add('error');
+        input.setAttribute('aria-invalid', 'true');
+    }
+    
+    if (checkboxContainer) {
+        checkboxContainer.classList.add('error');
         input.setAttribute('aria-invalid', 'true');
     }
     
@@ -67,9 +79,15 @@ function clearValidation(inputId, messageId) {
     
     const errorSpan = document.getElementById(messageId);
     const inputContainer = input.closest('.input-container');
+    const checkboxContainer = input.closest('.checkbox-container');
     
     if (inputContainer) {
         inputContainer.classList.remove('error', 'success');
+        input.removeAttribute('aria-invalid');
+    }
+    
+    if (checkboxContainer) {
+        checkboxContainer.classList.remove('error');
         input.removeAttribute('aria-invalid');
     }
     
@@ -153,6 +171,7 @@ function initValidation() {
     const senhaCadastro = document.getElementById('id_senha_cadastro');
     const confirmarSenha = document.getElementById('id_confirmar_senha');
     const dataNascimento = document.getElementById('id_data_nascimento');
+    const aceitarPoliticas = document.getElementById('id_aceitar_politicas');
     
     // =============================================
     // EXEMPLO: VALIDAÇÃO DE EMAIL (COMPLETA)
@@ -178,6 +197,15 @@ function initValidation() {
             const inputContainer = this.closest('.input-container');
             if (inputContainer && inputContainer.classList.contains('error')) {
                 clearValidation('id_email_cadastro', 'erro-email-cadastro');
+            }
+        });
+    }
+    
+    // Validação do checkbox de aceitar políticas
+    if (aceitarPoliticas) {
+        aceitarPoliticas.addEventListener('change', function() {
+            if (this.checked) {
+                clearValidation('id_aceitar_politicas', 'erro-aceitar-politicas');
             }
         });
     }
@@ -259,11 +287,17 @@ function initValidation() {
         // TODO: Adicionar validação de confirmação de senha no submit
         
         // TODO: Adicionar validação de data de nascimento no submit
+        
+        // Validar checkbox de aceitar políticas
+        if (aceitarPoliticas && !aceitarPoliticas.checked) {
+            showError('id_aceitar_politicas', 'erro-aceitar-politicas', 'Você deve aceitar os Termos de Serviço e a Política de Privacidade');
+            isValid = false;
+        }
   
         // Se houver erros, previne envio e focar no primeiro campo com erro
         if (!isValid) {
             e.preventDefault();
-            const firstError = cadastroForm.querySelector('.error input');
+            const firstError = cadastroForm.querySelector('.error input, .error select, .checkbox-container.error input');
             if (firstError) {
                 firstError.focus();
             }
