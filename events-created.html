@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos Criados - Simbora</title>
+    
+    <!-- Google Fonts: Roboto Condensed + Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <!-- Material Symbols Rounded -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    
+    <style>
+        /* =============================================
+           EVENTOS CRIADOS - ESTILOS COMPLETOS
+           Adequado ao Guia de Estilo Simbora
+           ============================================= */
+
+        :root {
+            /* Cores principais - Paleta Simbora */
+            --azul-principal: #004AAD;
+            --verde-limao: #CCEE52;
+            --laranja: #FA7625;
+            --amarelo: #FFD639;
+            
+            /* Cores de suporte */
+            --branco: #FFFFFF;
+            --cinza-claro: #F5F7FA;
+            --cinza-medio: #A0AEC0;
+            --cinza-escuro: #4A5568;
+            --texto-principal: #2D3748;
+            
+            /* Tipografia - Roboto Condensed + Poppins */
+            --font-heading: 'Roboto Condensed', sans-serif;
+            --font-body: 'Poppins', sans-serif;
+            --font-family: var(--font-body);
+            --font-size-base: 16px;
+            --font-size-small: 14px;
+            --font-size-title: 32px;
+            --font-size-subtitle: 18px;
+            
+            /* Espaçamentos */
+            --radius-md: 16px;
+            --radius-lg: 24px;
+            --spacing-xs: 8px;
+            --spacing-sm: 16px;
+            --spacing-md: 24px;
+            --spacing-lg: 32px;
+            
+            /* Transições */
+            --transition: 0.3s ease;
+            --transition-slow: 0.6s ease;
+        }
+
+        /* =============================================
+           RESET E BASE
+           ============================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--cinza-claro);
+            min-height: 100vh;
+            color: var(--texto-principal);
+            overflow-x: hidden;
+            line-height: 1.6;
+            padding: var(--spacing-sm);
+        }
+
+        /* =============================================
+           CONTAINER PRINCIPAL
+           ============================================= */
+
+        .main-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: var(--branco);
+            border-radius: var(--radius-lg);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        /* =============================================
+           HEADER
+           ============================================= */
+
+        .header {
+            background-color: var(--azul-principal);
+            color: var(--branco);
+            padding: var(--spacing-lg);
+            text-align: center;
+        }
+
+        .main-title {
+            font-family: var(--font-heading);
+            font-size: var(--font-size-title);
+            font-weight: 700;
+            margin-bottom: var(--spacing-xs);
+            letter-spacing: -0.02em;
+        }
+
+        .subtitle {
+            font-family: var(--font-body);
+            font-size: var(--font-size-small);
+            opacity: 0.9;
+            font-weight: 400;
+        }
+
+        /* =============================================
+           CONTEÚDO PRINCIPAL
+           ============================================= */
+
+        .main-content {
+            padding: 0;
+        }
+
+        /* =============================================
+           ABAS DE FILTRO
+           ============================================= */
+
+        .filter-tabs {
+            display: flex;
+            background-color: var(--branco);
+            border-bottom: 1px solid var(--cinza-claro);
+        }
+
+        .filter-tab {
+            flex: 1;
+            text-align: center;
+            padding: var(--spacing-md);
+            cursor: pointer;
+            font-family: var(--font-body);
+            font-weight: 600;
+            transition: all var(--transition);
+            border-bottom: 3px solid transparent;
+            color: var(--cinza-escuro);
+            font-size: var(--font-size-base);
+        }
+
+        .filter-tab.active {
+            color: var(--azul-principal);
+            border-bottom: 3px solid var(--azul-principal);
+            background-color: rgba(0, 74, 173, 0.05);
+        }
+
+        .filter-tab:hover {
+            background-color: rgba(0, 74, 173, 0.08);
+        }
+
+        /* =============================================
+           SEÇÃO DE EVENTOS
+           ============================================= */
+
+        .events-section {
+            padding: var(--spacing-lg);
+        }
+
+        .section-title {
+            font-family: var(--font-heading);
+            font-size: var(--font-size-subtitle);
+            font-weight: 700;
+            margin-bottom: var(--spacing-md);
+            color: var(--azul-principal);
+            padding-bottom: var(--spacing-xs);
+            border-bottom: 2px solid var(--cinza-claro);
+            letter-spacing: -0.02em;
+        }
+
+        .cards-container {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-md);
+        }
+
+        /* =============================================
+           CARDS DE EVENTO
+           ============================================= */
+
+        .event-card {
+            background-color: var(--branco);
+            border-radius: var(--radius-md);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            transition: all var(--transition);
+            border: 1px solid var(--cinza-claro);
+            position: relative;
+        }
+
+        .event-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+        }
+
+        .event-header {
+            background-color: var(--azul-principal);
+            color: var(--branco);
+            padding: var(--spacing-md) var(--spacing-lg);
+        }
+
+        .event-date {
+            font-family: var(--font-body);
+            font-size: var(--font-size-small);
+            font-weight: 500;
+            margin-bottom: 6px;
+            opacity: 0.9;
+        }
+
+        .event-name {
+            font-family: var(--font-heading);
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 6px;
+            letter-spacing: -0.02em;
+        }
+
+        .event-location {
+            font-family: var(--font-body);
+            font-size: var(--font-size-base);
+            opacity: 0.9;
+            font-weight: 400;
+        }
+
+        .event-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-xs);
+            margin-top: var(--spacing-sm);
+        }
+
+        .tag {
+            background-color: rgba(255, 255, 255, 0.2);
+            color: var(--branco);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-family: var(--font-body);
+            font-size: var(--font-size-small);
+            font-weight: 500;
+        }
+
+        /* =============================================
+           CONTEÚDO DO EVENTO
+           ============================================= */
+
+        .event-content {
+            padding: var(--spacing-lg);
+        }
+
+        .event-description {
+            color: var(--cinza-escuro);
+            margin-bottom: var(--spacing-md);
+            line-height: 1.6;
+            font-family: var(--font-body);
+            font-weight: 400;
+        }
+
+        .event-details {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: var(--spacing-md);
+            padding-bottom: var(--spacing-md);
+            border-bottom: 1px solid var(--cinza-claro);
+        }
+
+        .event-creator, .event-participants {
+            font-family: var(--font-body);
+            font-size: var(--font-size-small);
+            color: var(--cinza-escuro);
+            font-weight: 400;
+        }
+
+        /* =============================================
+           AÇÕES DO EVENTO
+           ============================================= */
+
+        .event-actions {
+            display: flex;
+            gap: var(--spacing-sm);
+            margin-top: var(--spacing-md);
+            flex-wrap: wrap;
+        }
+
+        .action-btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            font-family: var(--font-body);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all var(--transition);
+            font-size: var(--font-size-small);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-edit {
+            background-color: var(--azul-principal);
+            color: var(--branco);
+        }
+
+        .btn-edit:hover {
+            background-color: #003d8f;
+        }
+
+        .btn-manage {
+            background-color: var(--verde-limao);
+            color: var(--texto-principal);
+        }
+
+        .btn-manage:hover {
+            background-color: #b8d947;
+        }
+
+        .btn-cancel {
+            background-color: var(--laranja);
+            color: var(--branco);
+        }
+
+        .btn-cancel:hover {
+            background-color: #e86618;
+        }
+
+        /* =============================================
+           STATUS DO EVENTO
+           ============================================= */
+
+        .status-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: var(--spacing-md);
+        }
+
+        .event-theme {
+            font-family: var(--font-body);
+            font-size: var(--font-size-small);
+            color: var(--cinza-escuro);
+            font-weight: 500;
+        }
+
+        .event-status {
+            padding: 7px 14px;
+            border-radius: 20px;
+            font-family: var(--font-body);
+            font-size: var(--font-size-small);
+            font-weight: 600;
+            letter-spacing: 0.02em;
+        }
+
+        .status-active {
+            background-color: var(--verde-limao);
+            color: var(--texto-principal);
+        }
+
+        .status-completed {
+            background-color: var(--cinza-medio);
+            color: var(--branco);
+        }
+
+        .status-cancelled {
+            background-color: var(--laranja);
+            color: var(--branco);
+        }
+
+        .status-pending {
+            background-color: var(--amarelo);
+            color: var(--texto-principal);
+        }
+
+        /* =============================================
+           BADGE DE CRIAÇÃO
+           ============================================= */
+
+        .creator-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: var(--verde-limao);
+            color: var(--texto-principal);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-family: var(--font-body);
+            font-size: 12px;
+            font-weight: 600;
+            z-index: 2;
+        }
+
+        /* =============================================
+           SEÇÃO DE COMPARTILHAMENTO
+           ============================================= */
+
+        .compartilhar {
+            margin-top: var(--spacing-lg);
+            padding: var(--spacing-md);
+            background: linear-gradient(135deg, rgba(0, 74, 173, 0.05) 0%, rgba(204, 238, 82, 0.05) 100%);
+            border-radius: var(--radius-md);
+            border: 1px solid rgba(0, 74, 173, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .compartilhar::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--azul-principal), var(--verde-limao), var(--laranja));
+        }
+
+        .compartilhar h3 {
+            font-family: var(--font-heading);
+            font-size: var(--font-size-subtitle);
+            font-weight: 700;
+            color: var(--azul-principal);
+            margin-bottom: var(--spacing-xs);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+        }
+
+        .compartilhar h3::before {
+            content: '📤';
+            font-size: 1.2em;
+        }
+
+        .compartilhar p {
+            font-family: var(--font-body);
+            font-size: var(--font-size-small);
+            color: var(--cinza-escuro);
+            margin-bottom: var(--spacing-md);
+            line-height: 1.5;
+        }
+
+        .share-buttons {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: var(--spacing-sm);
+            margin-top: var(--spacing-md);
+        }
+
+        .share-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--spacing-xs);
+            padding: var(--spacing-sm) var(--spacing-md);
+            border: none;
+            border-radius: var(--radius-md);
+            font-family: var(--font-body);
+            font-size: var(--font-size-small);
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all var(--transition);
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .share-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .share-btn:hover::before {
+            left: 100%;
+        }
+
+        .share-whatsapp {
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            color: var(--branco);
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+        }
+
+        .share-whatsapp:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+        }
+
+        .share-facebook {
+            background: linear-gradient(135deg, #1877F2 0%, #0D5FD7 100%);
+            color: var(--branco);
+            box-shadow: 0 4px 12px rgba(24, 119, 242, 0.3);
+        }
+
+        .share-facebook:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(24, 119, 242, 0.4);
+        }
+
+        .share-link {
+            background: linear-gradient(135deg, var(--verde-limao) 0%, #b8d947 100%);
+            color: var(--texto-principal);
+            box-shadow: 0 4px 12px rgba(204, 238, 82, 0.3);
+        }
+
+        .share-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(204, 238, 82, 0.4);
+        }
+
+        .share-btn .material-symbols-rounded {
+            font-size: 20px;
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        /* Feedback visual para cópia de link */
+        .share-link.copied {
+            background: linear-gradient(135deg, var(--laranja) 0%, #e86618 100%);
+            color: var(--branco);
+        }
+
+        .share-link.copied::after {
+            content: '✓ Copiado!';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: var(--font-size-small);
+            font-weight: 600;
+        }
+
+        /* =============================================
+           ESTADO VAZIO
+           ============================================= */
+
+        .empty-state {
+            text-align: center;
+            padding: 50px 30px;
+            color: var(--cinza-escuro);
+            background-color: var(--branco);
+            border-radius: var(--radius-md);
+            margin: var(--spacing-md) 0;
+            border: 1px dashed var(--cinza-medio);
+        }
+
+        .empty-state p {
+            margin-bottom: 25px;
+            font-family: var(--font-body);
+            font-size: var(--font-size-base);
+            font-weight: 400;
+        }
+
+        .create-btn {
+            background-color: var(--azul-principal);
+            color: var(--branco);
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-family: var(--font-body);
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            cursor: pointer;
+            transition: background-color var(--transition);
+            text-transform: uppercase;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .create-btn:hover {
+            background-color: #003d8f;
+        }
+
+        /* =============================================
+           RESPONSIVIDADE
+           ============================================= */
+
+        @media (max-width: 768px) {
+            body {
+                padding: var(--spacing-xs);
+            }
+            
+            .event-details {
+                flex-direction: column;
+                gap: var(--spacing-xs);
+            }
+            
+            .status-section {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: var(--spacing-xs);
+            }
+            
+            .main-container {
+                border-radius: var(--radius-md);
+            }
+            
+            .events-section {
+                padding: var(--spacing-md);
+            }
+            
+            .header {
+                padding: var(--spacing-md);
+            }
+            
+            .main-title {
+                font-size: 24px;
+            }
+            
+            .event-name {
+                font-size: 20px;
+            }
+            
+            .event-actions {
+                flex-direction: column;
+            }
+            
+            .action-btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .compartilhar {
+                margin-top: var(--spacing-md);
+                padding: var(--spacing-sm);
+            }
+            
+            .share-buttons {
+                grid-template-columns: 1fr;
+                gap: var(--spacing-xs);
+            }
+            
+            .share-btn {
+                padding: var(--spacing-sm);
+                font-size: 12px;
+            }
+            
+            .compartilhar h3 {
+                font-size: var(--font-size-base);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .filter-tab {
+                padding: var(--spacing-sm);
+                font-size: var(--font-size-small);
+            }
+            
+            .event-content {
+                padding: var(--spacing-md);
+            }
+            
+            .event-header {
+                padding: var(--spacing-sm) var(--spacing-md);
+            }
+            
+            .action-btn {
+                padding: 10px 20px;
+                font-size: 12px;
+            }
+
+            .compartilhar {
+                margin-top: var(--spacing-sm);
+            }
+            
+            .share-btn {
+                padding: 10px var(--spacing-sm);
+            }
+            
+            .share-btn .material-symbols-rounded {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <header class="header">
+            <h1 class="main-title">Eventos Criados</h1>
+            <div class="subtitle">Gerencie os eventos que você criou</div>
+        </header>
+        
+        <div class="main-content">
+            <nav class="filter-tabs">
+                <div class="filter-tab active">Todos</div>
+                <div class="filter-tab">Ativos</div>
+                <div class="filter-tab">Concluídos</div>
+                <div class="filter-tab">Rascunhos</div>
+            </nav>
+            
+            <section class="events-section">
+                <h2 class="section-title">Meus Eventos Criados</h2>
+                
+                <div class="cards-container">
+                    <!-- Evento Ativo -->
+                    <article class="event-card">
+                        <div class="creator-badge">Você é o criador</div>
+                        <div class="event-header">
+                            <div class="event-date">SAB 25, NOVEMBRO. 20:00</div>
+                            <div class="event-name">Festa de Aniversário</div>
+                            <div class="event-location">Minha Casa - Jardim das Flores</div>
+                            <div class="event-tags">
+                                <span class="tag">Social</span>
+                                <span class="tag">Festa</span>
+                                <span class="tag">Amigos</span>
+                            </div>
+                        </div>
+                        <div class="event-content">
+                            <p class="event-description">
+                                Celebração do meu aniversário de 25 anos! Vai ter música, comida, bebida e muita diversão. Tragam suas energias positivas!
+                            </p>
+                            <div class="event-details">
+                                <div class="event-creator">Criado por: Você</div>
+                                <div class="event-participants">Participantes: 15/25</div>
+                            </div>
+                            <div class="event-actions">
+                                <button class="action-btn btn-edit">✏️ Editar Evento</button>
+                                <button class="action-btn btn-manage">👥 Gerenciar Participantes</button>
+                                <button class="action-btn btn-cancel">❌ Cancelar Evento</button>
+                            </div>
+                            <div class="status-section">
+                                <div class="event-theme">FESTA DE ANIVERSÁRIO</div>
+                                <div class="event-status status-active">Ativo</div>
+                            </div>
+                            
+                            <!-- Seção de Compartilhamento -->
+                            <div class="compartilhar">
+                                <h3>Compartilhe este rolê</h3>
+                                <p>Convide amigos que ainda não estão no app para fazer parte dessa experiência!</p>
+                                <div class="share-buttons">
+                                    <a href="https://wa.me/?text=Venha%20para%20minha%20Festa%20de%20Aniversário%20no%20Simbora!%20🎉%20Será%20no%20dia%2025%20de%20Novembro%20às%2020h.%20Não%20perca!" 
+                                       target="_blank" 
+                                       rel="noopener noreferrer" 
+                                       class="share-btn share-whatsapp">
+                                        <span class="material-symbols-rounded">chat</span>
+                                        WhatsApp
+                                    </a>
+                                    <a href="#" 
+                                       class="share-btn share-facebook">
+                                        <span class="material-symbols-rounded">share</span>
+                                        Facebook
+                                    </a>
+                                    <button class="share-btn share-link">
+                                        <span class="material-symbols-rounded">link</span>
+                                        Copiar Link
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- Evento Pendente -->
+                    <article class="event-card">
+                        <div class="creator-badge">Você é o criador</div>
+                        <div class="event-header">
+                            <div class="event-date">DOM 10, DEZEMBRO. 14:00</div>
+                            <div class="event-name">Piquenique no Parque</div>
+                            <div class="event-location">Parque da Cidade</div>
+                            <div class="event-tags">
+                                <span class="tag">Natureza</span>
+                                <span class="tag">Social</span>
+                                <span class="tag">Família</span>
+                            </div>
+                        </div>
+                        <div class="event-content">
+                            <p class="event-description">
+                                Piquenique relaxante no parque. Cada um traz algo para compartilhar. Vamos aproveitar o dia ao ar livre!
+                            </p>
+                            <div class="event-details">
+                                <div class="event-creator">Criado por: Você</div>
+                                <div class="event-participants">Participantes: 8/20</div>
+                            </div>
+                            <div class="event-actions">
+                                <button class="action-btn btn-edit">✏️ Editar Evento</button>
+                                <button class="action-btn btn-manage">👥 Gerenciar Participantes</button>
+                                <button class="action-btn btn-cancel">❌ Cancelar Evento</button>
+                            </div>
+                            <div class="status-section">
+                                <div class="event-theme">PIQUENIQUE AO AR LIVRE</div>
+                                <div class="event-status status-pending">Pendente</div>
+                            </div>
+                            
+                            <!-- Seção de Compartilhamento -->
+                            <div class="compartilhar">
+                                <h3>Compartilhe este rolê</h3>
+                                <p>Convide amigos que ainda não estão no app para fazer parte dessa experiência!</p>
+                                <div class="share-buttons">
+                                    <a href="https://wa.me/?text=Vamos%20fazer%20um%20piquenique%20no%20Parque%20da%20Cidade%20no%20dia%2010%20de%20Dezembro%20às%2014h!%20🌳%20Cada%20um%20traz%20algo%20para%20compartilhar." 
+                                       target="_blank" 
+                                       rel="noopener noreferrer" 
+                                       class="share-btn share-whatsapp">
+                                        <span class="material-symbols-rounded">chat</span>
+                                        WhatsApp
+                                    </a>
+                                    <a href="#" 
+                                       class="share-btn share-facebook">
+                                        <span class="material-symbols-rounded">share</span>
+                                        Facebook
+                                    </a>
+                                    <button class="share-btn share-link">
+                                        <span class="material-symbols-rounded">link</span>
+                                        Copiar Link
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- Evento Concluído -->
+                    <article class="event-card">
+                        <div class="creator-badge">Você é o criador</div>
+                        <div class="event-header">
+                            <div class="event-date">SAB 15, OUTUBRO. 19:00</div>
+                            <div class="event-name">Jantar de Confraternização</div>
+                            <div class="event-location">Restaurante Sabor Mineiro</div>
+                            <div class="event-tags">
+                                <span class="tag">Gastronomia</span>
+                                <span class="tag">Social</span>
+                                <span class="tag">Trabalho</span>
+                            </div>
+                        </div>
+                        <div class="event-content">
+                            <p class="event-description">
+                                Jantar para celebrar o sucesso do último projeto da equipe. Comida típica mineira em um ambiente acolhedor.
+                            </p>
+                            <div class="event-details">
+                                <div class="event-creator">Criado por: Você</div>
+                                <div class="event-participants">Participantes: 12/12</div>
+                            </div>
+                            <div class="event-actions">
+                                <button class="action-btn btn-edit">✏️ Ver Detalhes</button>
+                                <button class="action-btn btn-manage">📊 Ver Estatísticas</button>
+                            </div>
+                            <div class="status-section">
+                                <div class="event-theme">JANTAR DE EQUIPE</div>
+                                <div class="event-status status-completed">Concluído</div>
+                            </div>
+                            
+                            <!-- Seção de Compartilhamento -->
+                            <div class="compartilhar">
+                                <h3>Compartilhe este rolê</h3>
+                                <p>Convide amigos que ainda não estão no app para fazer parte dessa experiência!</p>
+                                <div class="share-buttons">
+                                    <a href="https://wa.me/?text=Participei%20de%20um%20jantar%20incrível%20de%20con                                     <a href="https://wa.me/?text=Participei%20de%20um%20jantar%20incrível%20de%20confraternização%20no%20Restaurante%20Sabor%20Mineiro!%20🍽️%20Foi%20uma%20experiência%20maravilhosa%20com%20a%20equipe." 
+                                       target="_blank" 
+                                       rel="noopener noreferrer" 
+                                       class="share-btn share-whatsapp">
+                                        <span class="material-symbols-rounded">chat</span>
+                                        WhatsApp
+                                    </a>
+                                    <a href="#" 
+                                       class="share-btn share-facebook">
+                                        <span class="material-symbols-rounded">share</span>
+                                        Facebook
+                                    </a>
+                                    <button class="share-btn share-link">
+                                        <span class="material-symbols-rounded">link</span>
+                                        Copiar Link
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- Evento Cancelado -->
+                    <article class="event-card">
+                        <div class="creator-badge">Você é o criador</div>
+                        <div class="event-header">
+                            <div class="event-date">DOM 05, NOVEMBRO. 09:00</div>
+                            <div class="event-name">Corrida na Praia</div>
+                            <div class="event-location">Praia do Futuro</div>
+                            <div class="event-tags">
+                                <span class="tag">Esporte</span>
+                                <span class="tag">Saúde</span>
+                                <span class="tag">Natureza</span>
+                            </div>
+                        </div>
+                        <div class="event-content">
+                            <p class="event-description">
+                                Corrida matinal na praia seguida de alongamento. Para todos os níveis, do iniciante ao avançado.
+                            </p>
+                            <div class="event-details">
+                                <div class="event-creator">Criado por: Você</div>
+                                <div class="event-participants">Participantes: 0/15</div>
+                            </div>
+                            <div class="event-actions">
+                                <button class="action-btn btn-edit">✏️ Recriar Evento</button>
+                            </div>
+                            <div class="status-section">
+                                <div class="event-theme">ATIVIDADE FÍSICA</div>
+                                <div class="event-status status-cancelled">Cancelado</div>
+                            </div>
+                            
+                            <!-- Seção de Compartilhamento -->
+                            <div class="compartilhar">
+                                <h3>Compartilhe este rolê</h3>
+                                <p>Convide amigos que ainda não estão no app para fazer parte dessa experiência!</p>
+                                <div class="share-buttons">
+                                    <a href="https://wa.me/?text=Que%20tal%20uma%20corrida%20na%20Praia%20do%20Futuro%20no%20dia%205%20de%20Novembro%20às%209h?%20🏃‍♂️%20Vamos%20nos%20exercitar%20e%20aproveitar%20o%20ar%20livre!" 
+                                       target="_blank" 
+                                       rel="noopener noreferrer" 
+                                       class="share-btn share-whatsapp">
+                                        <span class="material-symbols-rounded">chat</span>
+                                        WhatsApp
+                                    </a>
+                                    <a href="#" 
+                                       class="share-btn share-facebook">
+                                        <span class="material-symbols-rounded">share</span>
+                                        Facebook
+                                    </a>
+                                    <button class="share-btn share-link">
+                                        <span class="material-symbols-rounded">link</span>
+                                        Copiar Link
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+            
+            <div class="empty-state">
+                <p>Não encontrou todos os eventos que criou?</p>
+                <a href="create-event.html" class="create-btn">➕ Criar Novo Evento</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Adicionar interatividade às abas de filtro
+        document.querySelectorAll('.filter-tab').forEach(aba => {
+            aba.addEventListener('click', function() {
+                // Remover classe active de todas as abas
+                document.querySelectorAll('.filter-tab').forEach(t => {
+                    t.classList.remove('active');
+                });
+                
+                // Adicionar classe active à aba clicada
+                this.classList.add('active');
+            });
+        });
+
+        // Funções de compartilhamento
+        function compartilharFacebook(eventoNome, eventoData, eventoLocal) {
+            const texto = `Confira ${eventoNome} no Simbora! 🎉 Data: ${eventoData} | Local: ${eventoLocal}`;
+            const url = window.location.href;
+            const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}&quote=${encodeURIComponent(texto)}`;
+            window.open(facebookUrl, '_blank', 'width=600,height=400');
+        }
+
+        function copiarLink() {
+            const btn = event.currentTarget;
+            const link = window.location.href;
+            
+            // Usar a Clipboard API moderna
+            navigator.clipboard.writeText(link).then(() => {
+                // Feedback visual
+                const originalText = btn.innerHTML;
+                btn.classList.add('copied');
+                btn.innerHTML = '<span class="material-symbols-rounded">check</span>Copiado!';
+                
+                // Restaurar após 2 segundos
+                setTimeout(() => {
+                    btn.classList.remove('copied');
+                    btn.innerHTML = originalText;
+                }, 2000);
+            }).catch(err => {
+                // Fallback para navegadores mais antigos
+                const textArea = document.createElement('textarea');
+                textArea.value = link;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                
+                // Feedback visual mesmo com fallback
+                const originalText = btn.innerHTML;
+                btn.classList.add('copied');
+                btn.innerHTML = '<span class="material-symbols-rounded">check</span>Copiado!';
+                
+                setTimeout(() => {
+                    btn.classList.remove('copied');
+                    btn.innerHTML = originalText;
+                }, 2000);
+            });
+        }
+
+        // Inicializar funcionalidades de compartilhamento
+        document.addEventListener('DOMContentLoaded', function() {
+            // Adicionar eventos de compartilhamento a todos os botões
+            const shareLinks = document.querySelectorAll('.share-link');
+            shareLinks.forEach(link => {
+                link.addEventListener('click', copiarLink);
+            });
+            
+            // Adicionar eventos para Facebook com dados do evento
+            const facebookButtons = document.querySelectorAll('.share-facebook');
+            facebookButtons.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const eventCard = this.closest('.event-card');
+                    const eventName = eventCard.querySelector('.event-name').textContent;
+                    const eventDate = eventCard.querySelector('.event-date').textContent;
+                    const eventLocation = eventCard.querySelector('.event-location').textContent;
+                    
+                    compartilharFacebook(eventName, eventDate, eventLocation);
+                });
+            });
+
+            // Adicionar interatividade aos botões de ação
+            document.querySelectorAll('.action-btn').forEach(botao => {
+                botao.addEventListener('click', function() {
+                    const texto = this.textContent.trim();
+                    const eventName = this.closest('.event-card').querySelector('.event-name').textContent;
+                    
+                    switch(true) {
+                        case texto.includes('Editar'):
+                            alert(`Editando evento: ${eventName}`);
+                            break;
+                        case texto.includes('Gerenciar'):
+                            alert(`Gerenciando participantes de: ${eventName}`);
+                            break;
+                        case texto.includes('Cancelar'):
+                            if(confirm(`Tem certeza que deseja cancelar o evento "${eventName}"?`)) {
+                                alert(`Evento "${eventName}" cancelado com sucesso!`);
+                            }
+                            break;
+                        case texto.includes('Recriar'):
+                            alert(`Recriando evento: ${eventName}`);
+                            break;
+                        case texto.includes('Ver Detalhes'):
+                            alert(`Mostrando detalhes de: ${eventName}`);
+                            break;
+                        case texto.includes('Ver Estatísticas'):
+                            alert(`Mostrando estatísticas de: ${eventName}`);
+                            break;
+                    }
+                });
+            });
+
+            // Adicionar efeito de loading ao botão criar evento
+            document.querySelector('.create-btn').addEventListener('click', function(e) {
+                e.preventDefault();
+                const btn = this;
+                const textoOriginal = btn.textContent;
+                
+                btn.textContent = 'Redirecionando...';
+                btn.style.opacity = '0.7';
+                
+                setTimeout(() => {
+                    window.location.href = btn.getAttribute('href');
+                }, 1000);
+            });
+        });
+
+        // Animações para os cards
+        document.querySelectorAll('.event-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-4px)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body>
+</html>
