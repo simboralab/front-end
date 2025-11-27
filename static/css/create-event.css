@@ -12,6 +12,24 @@ body.has-header {
     overflow-x: hidden;
 }
 
+.logo {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.logo-desktop {
+    display: block;
+    max-width: 200px;
+}
+
+.logo-mobile {
+    display: none;
+    max-width: 45px;
+}
+
+
+
 /* Container main específico para create-event - quando há header antes */
 .main-header ~ main.container {
     width: 100%;
@@ -555,7 +573,7 @@ body.has-header {
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 550px) {
     .form-wrapper-create {
         padding: 20px;
         border-radius: 16px;
@@ -568,4 +586,14 @@ body.has-header {
     .form-wrapper-create h2 {
         font-size: 1.25rem;
     }
+
+     .logo-desktop {
+        display: none;
+    }
+    
+    .logo-mobile {
+        display: block;
+    }
+    
+
 }

@@ -144,6 +144,10 @@ body {
 }
 
 .form-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   max-width: 640px;
   background: var(--branco);
@@ -362,7 +366,7 @@ footer a:hover {
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1350px) {
   body {
     align-items: flex-start;
     padding-top: 0;
