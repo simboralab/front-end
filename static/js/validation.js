@@ -107,7 +107,7 @@ function clearValidation(inputId, messageId) {
  * @returns {boolean} - true se válido, false se inválido
  */
 function validateEmail(email) {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const emailRegex = /^[a-zA-Z0-9!#$%&'*+\-/=?^_`{|}~](?!.*?\.\.)(?!.*?\.$)[a-zA-Z0-9!#$%&'*+\-/=?^_`{|}~.]*[a-zA-Z0-9!#$%&'*+\-/=?^_`{|}~]@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?$/;
     return emailRegex.test(email);
 }
 
@@ -118,7 +118,9 @@ function validateEmail(email) {
  * @returns {boolean} - true se válido, false se inválido
  */
 function validatePassword(password) {
-    return password.length >= 8;
+    // validação de senha (esta passando apenas números, senha igual nome e sequencias - se possível, adicionar validação forte com alfanumérico, letramaiúscula e caractere especial)
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+    return passwordRegex.test(password);
 }
 
 /**
@@ -199,6 +201,14 @@ function initValidation() {
                 clearValidation('id_email_cadastro', 'erro-email-cadastro');
             }
         });
+
+        // Validação de campo se está vazio
+        emailCadastro.addEventListener('blur', function () {
+            const email = this.value.trim();
+            if (!email) {
+                showError('id_email_cadastro', 'erro-email-cadastro', 'Por favor, insira seu e-mail');
+            }
+        });
     }
 
     // Validação do checkbox de aceitar políticas
@@ -237,6 +247,22 @@ function initValidation() {
                 clearValidation('id_senha_cadastro', 'erro-senha-cadastro');
             }
         });
+
+        // Validação de campo se está vazio
+        senhaCadastro.addEventListener('blur', function () {
+            const senha = this.value.trim();
+            if (!senha) {
+                showError('id_senha_cadastro', 'erro-senha-cadastro', 'Por favor, insira sua senha');
+            }
+        });
+
+        // Validação de força da senha (opcional)
+        senhaCadastro.addEventListener('blur', function () {
+            const senha = this.value.trim();
+            if (senha && !validatePassword(senha)) {
+                showError('id_senha_cadastro', 'erro-senha-cadastro', 'A senha deve ter pelo menos 8 caracteres, incluindo maiúsculas, números e caracteres especiais');
+            }
+        });
     }
 
     // =============================================
@@ -273,6 +299,23 @@ function initValidation() {
                 const inputContainer = confirmarSenha.closest('.input-container');
                 if (inputContainer && inputContainer.classList.contains('error')) {
                     clearValidation('id_confirmar_senha', 'erro-confirmar-senha');
+                }
+            });
+
+            // Validação de campo se está vazio
+            confirmarSenha.addEventListener('blur', function () {
+                const confirmarSenhaValue = this.value.trim();
+                if (!confirmarSenhaValue) {
+                    showError('id_confirmar_senha', 'erro-confirmar-senha', 'Por favor, confirme sua senha');
+                }
+            });
+
+            // Validação de coincidência de senha
+            confirmarSenha.addEventListener('blur', function () {
+                const confirmarSenhaValue = this.value.trim();
+                const senhaValue = senhaCadastro.value.trim();
+                if (confirmarSenhaValue && !validatePasswordMatch(senhaValue, confirmarSenhaValue)) {
+                    showError('id_confirmar_senha', 'erro-confirmar-senha', 'As senhas não coincidem');
                 }
             });
         }
