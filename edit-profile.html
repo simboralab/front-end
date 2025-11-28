@@ -36,12 +36,67 @@
             </nav>
 
             <div class="header-profile">
-                <div class="profile-info">
+                <div class="profile-info" id="profile-trigger">
                     <img src="https://avatars.githubusercontent.com/u/187967201?v=4" alt="Perfil" class="profile-avatar">
                     <div class="profile-details">
-                        <span class="profile-name">Editar Perfil</span>
-                        <span class="profile-pronouns">Perfil</span>
+                        <span class="profile-name">Juju</span>
+                        <span class="profile-pronouns">Ela/Dela</span>
                     </div>
+                    <span class="material-symbols-rounded profile-arrow">expand_more</span>
+                </div>
+                
+                <!-- Menu Dropdown -->
+                <div class="profile-dropdown" id="profile-menu">
+                    <div class="dropdown-header">
+                        <img src="https://avatars.githubusercontent.com/u/187967201?v=4" alt="Juju"
+                            class="dropdown-avatar">
+                        <div class="dropdown-user-info">
+                            <span class="dropdown-name">Juju</span>
+                            <span class="dropdown-pronouns">Ela/Dela</span>
+                        </div>
+                    </div>
+                    <div class="dropdown-divider"></div>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="edit-profile.html" class="dropdown-item">
+                                <span class="material-symbols-rounded">person</span>
+                                <span>Meu perfil</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="events-created.html" class="dropdown-item">
+                                <span class="material-symbols-rounded">event</span>
+                                <span>Meus eventos</span>
+                            </a>
+                        </li>
+                        <li>
+                            <span class="dropdown-item disabled">
+                                <span class="material-symbols-rounded">bookmark</span>
+                                <span>Eventos salvos</span>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="dropdown-item disabled">
+                                <span class="material-symbols-rounded">settings</span>
+                                <span>Configurações</span>
+                            </span>
+                        </li>
+                    </ul>
+                    <div class="dropdown-divider"></div>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="#" class="dropdown-item">
+                                <span class="material-symbols-rounded">help</span>
+                                <span>Ajuda</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="dropdown-item logout">
+                                <span class="material-symbols-rounded">logout</span>
+                                <span>Sair</span>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -157,39 +212,60 @@
     </div>
 
     <!-- Footer -->
-    <footer class="main-footer">
-        <div class="footer-container">
-            <div class="footer-content">
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-columns">
                 <div class="footer-logo-section">
                     <img src="static/img/logo/marca_azul.png" alt="Simbora" class="footer-logo-img">
                     <p>Conectando pessoas aos melhores rolês da cidade.</p>
                 </div>
-                <div class="footer-nav">
-                    <h4>Explorar</h4>
-                    <a href="index.html">Início</a>
-                    <a href="#">Buscar Eventos</a>
-                    <a href="create-event.html">Criar Evento</a>
+                
+                <div class="footer-column">
+                    <h4 class="footer-heading">Simbora</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Sobre nós</a></li>
+                        <li><a href="#">Imprensa</a></li>
+                    </ul>
                 </div>
-                <div class="footer-nav">
-                    <h4>Suporte</h4>
-                    <a href="#">Central de Ajuda</a>
-                    <a href="#">Termos de Uso</a>
-                    <a href="#">Privacidade</a>
+                
+                <div class="footer-column">
+                    <h4 class="footer-heading">Categorias</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Esportes</a></li>
+                        <li><a href="#">Música</a></li>
+                        <li><a href="#">Gastronomia</a></li>
+                        <li><a href="#">Cultura</a></li>
+                    </ul>
                 </div>
-                <div class="footer-social">
-                    <h4>Siga a gente</h4>
+                
+                <div class="footer-column">
+                    <h4 class="footer-heading">Ajuda</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Contato</a></li>
+                        <li><a href="#">Termos de Serviço</a></li>
+                        <li><a href="#">Política de Privacidade</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4 class="footer-heading">Siga a gente</h4>
                     <div class="social-icons">
                         <a href="#" aria-label="Instagram"><span class="material-symbols-rounded">photo_camera</span></a>
                         <a href="#" aria-label="Twitter"><span class="material-symbols-rounded">alternate_email</span></a>
                     </div>
                 </div>
             </div>
+            
             <div class="footer-bottom">
-                <p>&copy; 2025 Simbora App. Todos os direitos reservados.</p>
+                <p>© 2025 <a href="#">Simbora™</a>. Todos os direitos reservados.</p>
             </div>
         </div>
     </footer>
 
+    <!-- JavaScript -->
+    <script src="static/js/principal.js"></script>
+    <script src="static/js/edit-profile.js"></script>
 </body>
 
 </html>
