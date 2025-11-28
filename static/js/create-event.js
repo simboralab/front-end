@@ -165,4 +165,3 @@ if (tagsInput && tagsList) {
         removeTag(tag);
     };
 }
-

@@ -1,7 +1,5 @@
-/* =============================================
-   SIMBORA - GUIA DE ESTILO
-   Paleta oficial de cores e componentes
-   ============================================= */
+/* Simbora - Guia de Estilo
+   Paleta oficial de cores e componentes */
 
 :root {
   /* Cores principais - Paleta Simbora */
@@ -39,9 +37,7 @@
   --transition-slow: 0.6s ease;
 }
 
-/* =============================================
-   RESET E BASE
-   ============================================= */
+/* Reset e Base */
 
 * {
   margin: 0;
@@ -57,9 +53,7 @@ body {
   overflow-x: hidden;
 }
 
-/* =============================================
-   TIPOGRAFIA - APLICAÇÃO DAS FONTES
-   ============================================= */
+/* Tipografia - Aplicação das Fontes */
 
 /* Títulos - Roboto Condensed */
 h1, h2, h3, .form-card h1, .hero-text h2 {
@@ -110,9 +104,7 @@ footer p {
   font-weight: 400;
 }
 
-/* =============================================
-   CONTAINER PRINCIPAL
-   ============================================= */
+/* Container Principal */
 
 /* Layout de inputs em linha */
 .row-inputs {
@@ -217,9 +209,7 @@ label {
 
 /* Nota: Estilos específicos de .form-card movidos para account.css */
 
-/* =============================================
-   CHECKBOX
-   ============================================= */
+/* Checkbox */
 
 .checkbox-container {
   display: flex;
@@ -268,9 +258,7 @@ label {
   color: var(--laranja);
 }
 
-/* =============================================
-   BOTÕES
-   ============================================= */
+/* Botões */
 
 .btn-primary {
   width: auto;
@@ -301,13 +289,9 @@ label {
   transform: translateY(0);
 }
 
-/* =============================================
-   FOOTER GERAL
-   ============================================= */
+/* Footer Geral */
 
-/* =============================================
-   ACESSIBILIDADE E MELHORIAS
-   ============================================= */
+/* Acessibilidade e Melhorias */
 
 /* Skip link para navegação por teclado */
 .skip-link {
@@ -360,9 +344,7 @@ label {
   color: var(--cinza-medio, #A0AEC0);
 }
 
-/* =============================================
-   VALIDAÇÃO DE FORMULÁRIOS
-   ============================================= */
+/* Validação de Formulários */
 
 /* Estados dos inputs */
 .input-group {
@@ -499,9 +481,7 @@ label {
   -moz-box-shadow: none;
 }
 
-/* =============================================
-   HEADER DE NAVEGAÇÃO PRINCIPAL
-   ============================================= */
+/* Header de Navegação Principal */
 
 .main-header {
   background-color: var(--branco);
@@ -684,9 +664,7 @@ label {
   }
 }
 
-/* =============================================
-   COMPONENTES COMPARTILHADOS DE FORMULÁRIOS
-   ============================================= */
+/* Componentes Compartilhados de Formulários */
 
 /* Ações do formulário */
 .form-actions {
@@ -840,27 +818,25 @@ label {
   font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
 }
 
-/* =============================================
-   FOOTER COMPARTILHADO
-   ============================================= */
-.main-footer {
-  background-color: var(--branco);
-  border-top: 1px solid var(--cinza-claro);
-  padding: 60px 0 20px;
-  margin-top: 60px;
+/* Footer Compartilhado - Site-Footer */
+.site-footer {
+  background: var(--cinza-claro);
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-.footer-container {
-  max-width: 1200px;
+.site-footer .footer-content {
+  max-width: 1280px;
   margin: 0 auto;
-  padding: 0 var(--spacing-md);
+  padding: 64px 16px 20px;
+  display: flex;
+  flex-direction: column;
 }
 
-.footer-content {
+.footer-columns {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
-  gap: 40px;
-  margin-bottom: 40px;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr;
+  gap: 48px;
+  margin-bottom: 0;
 }
 
 .footer-logo-section {
@@ -871,7 +847,8 @@ label {
 }
 
 .footer-logo-section .footer-logo-img {
-  height: 80px;
+  height: 60px;
+  width: auto;
   margin-bottom: 16px;
   object-fit: contain;
 }
@@ -879,38 +856,51 @@ label {
 .footer-logo-section p {
   color: var(--cinza-escuro);
   font-size: 0.9rem;
-  line-height: 1.5;
+  line-height: 1.6;
   max-width: 250px;
 }
 
-.footer-nav h4,
-.footer-social h4 {
+.footer-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-heading {
   font-family: var(--font-heading);
-  font-size: 1.1rem;
+  font-size: 0.875rem;
   font-weight: 700;
   color: var(--azul-principal);
-  margin-bottom: 20px;
+  text-transform: uppercase;
+  margin-bottom: 24px;
 }
 
-.footer-nav a {
-  display: block;
-  color: var(--cinza-escuro);
-  text-decoration: none;
-  margin-bottom: 12px;
-  font-size: 0.9rem;
-  transition: color var(--transition);
-}
-
-.footer-nav a:hover {
-  color: var(--laranja);
-}
-
-.social-icons {
+.footer-links {
+  list-style: none;
   display: flex;
+  flex-direction: column;
   gap: 16px;
 }
 
-.social-icons a {
+.footer-links a {
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  color: rgba(0, 74, 173, 0.8);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+.footer-links a:hover {
+  color: var(--laranja);
+  text-decoration: underline;
+}
+
+.site-footer .social-icons {
+  display: flex;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.site-footer .social-icons a {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -923,36 +913,235 @@ label {
   text-decoration: none;
 }
 
-.social-icons a:hover {
+.site-footer .social-icons a:hover {
   background-color: var(--azul-principal);
   color: var(--branco);
   transform: translateY(-2px);
 }
 
-.footer-bottom {
-  border-top: 1px solid var(--cinza-claro);
-  padding-top: 20px;
-  text-align: center;
+.site-footer .social-icons .material-symbols-rounded {
+  font-size: 20px;
 }
 
-.footer-bottom p {
+.footer-bottom {
+  width: 100%;
+  text-align: center;
+  font-family: var(--font-body);
+  font-size: 0.875rem;
   color: var(--cinza-medio);
-  font-size: 0.85rem;
+  padding-top: 32px;
+  margin-top: 24px;
+  border-top: 1px solid rgba(160, 174, 192, 0.2);
+}
+
+.footer-bottom a {
+  color: var(--azul-principal);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+.footer-bottom a:hover {
+  text-decoration: underline;
 }
 
 /* Responsividade do Footer */
-@media (max-width: 768px) {
-  .footer-content {
-    grid-template-columns: 1fr;
-    gap: 30px;
-    text-align: center;
+@media (max-width: 1024px) {
+  .footer-columns {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
   }
+  
+  .footer-logo-section {
+    grid-column: 1 / -1;
+    text-align: center;
+    align-items: center;
+  }
+}
 
+@media (max-width: 768px) {
+  .footer-columns {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  
+  .footer-logo-section {
+    text-align: center;
+    align-items: center;
+  }
+  
   .footer-logo-section p {
     margin: 0 auto;
   }
+}
 
-  .social-icons {
-    justify-content: center;
-  }
+/* Menu Dropdown do Perfil (Compartilhado entre várias páginas) */
+
+.header-profile {
+    position: relative;
+}
+
+.profile-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 12px;
+    transition: all var(--transition);
+}
+
+.profile-info:hover {
+    background-color: rgba(0, 74, 173, 0.05);
+}
+
+.profile-arrow {
+    color: var(--cinza-medio);
+    font-size: 24px;
+    transition: transform var(--transition);
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+.profile-info:hover .profile-arrow {
+    color: var(--azul-principal);
+}
+
+.profile-info.active .profile-arrow {
+    transform: rotate(180deg);
+    color: var(--azul-principal);
+}
+
+/* Menu Dropdown */
+.profile-dropdown {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    background: var(--branco);
+    border-radius: var(--radius-md);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+    min-width: 280px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1000;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.profile-dropdown.active,
+.profile-dropdown.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Header do Dropdown */
+.dropdown-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px;
+    border-bottom: 1px solid var(--cinza-claro);
+}
+
+.dropdown-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--azul-principal);
+}
+
+.dropdown-user-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.dropdown-name {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--texto-principal);
+}
+
+.dropdown-pronouns {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    color: var(--cinza-medio);
+}
+
+/* Divider */
+.dropdown-divider {
+    height: 1px;
+    background: var(--cinza-claro);
+    margin: 8px 0;
+}
+
+/* Menu Items */
+.dropdown-menu {
+    list-style: none;
+    padding: 8px;
+    margin: 0;
+}
+
+.dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    color: var(--texto-principal);
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all var(--transition);
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.dropdown-item:not(.disabled):hover {
+    background-color: rgba(67, 176, 42, 0.08);
+    color: #43B02A;
+}
+
+.dropdown-item .material-symbols-rounded {
+    font-size: 22px;
+    color: var(--azul-principal);
+    transition: all var(--transition);
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+.dropdown-item:not(.disabled):not(.logout):hover .material-symbols-rounded {
+    color: #43B02A;
+    font-variation-settings: 'FILL' 1;
+}
+
+/* Item Desabilitado */
+.dropdown-item.disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.dropdown-item.disabled .material-symbols-rounded {
+    color: var(--cinza-medio);
+}
+
+/* Logout */
+.dropdown-item.logout {
+    color: var(--laranja);
+}
+
+.dropdown-item.logout:hover {
+    background-color: rgba(250, 118, 37, 0.08);
+    color: var(--laranja);
+}
+
+.dropdown-item.logout .material-symbols-rounded {
+    color: var(--laranja);
+}
+
+.dropdown-item.logout:hover .material-symbols-rounded {
+    color: var(--laranja);
+    font-variation-settings: 'FILL' 1;
 }
