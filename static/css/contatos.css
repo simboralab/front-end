@@ -1,0 +1,240 @@
+/* Estilos específicos da página de Contatos */
+.contatos-pagina {
+  padding: 2.5rem 1rem 4rem;
+}
+.contatos-intro h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+.contatos-intro .descricao {
+  color: var(--cinza-escuro);
+  max-width: 60ch;
+  margin-bottom: 1.25rem;
+}
+.contatos-filtros {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.contatos-filtros select {
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  border: 1px solid var(--cinza-claro);
+  background: var(--branco);
+}
+.contatos-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin-top: 1rem;
+}
+.contato-card {
+  background: var(--branco);
+  border-radius: 12px;
+  overflow: visible; /* permitir tooltips fora do card sem serem cortados */
+  box-shadow: 0 6px 18px rgba(20,20,20,0.06);
+  display: flex;
+  flex-direction: column;
+  transition: transform .14s ease, box-shadow .14s ease;
+}
+.contato-card:hover { transform: translateY(-6px); box-shadow: 0 10px 30px rgba(20,20,20,0.08); }
+.contato-foto { width:100%; height: 240px; object-fit: cover; display:block; }
+.contato-info { padding: 14px; display: flex; flex-direction: column; gap: 8px; }
+.contato-info h3 { margin:0; font-size: 1.05rem; }
+.contato-info .cargo { color:#777; font-size:0.92rem; margin:0 }
+.contato-acoes { display:flex; gap:8px; margin-top:6px }
+.contato-btn { display:inline-flex; align-items:center; justify-content:center; width:40px; height:40px; border-radius:8px; border:1px solid var(--cinza-medio); background:var(--cinza-claro); cursor:pointer; color:var(--azul-principal); transition: background .12s ease, border-color .12s ease, transform .12s ease }
+.contato-btn span.material-symbols-rounded { font-size:20px }
+
+/* Botão unificado (imagem) */
+.contato-unificado { display:inline-flex; align-items:center; justify-content:center; width:44px; height:44px; border-radius:8px; border:1px solid var(--cinza-medio); background:var(--cinza-claro); cursor:pointer; color: var(--azul-principal); transition: background .12s ease, border-color .12s ease, transform .12s ease }
+.contato-unificado svg { width:22px; height:22px; display:block; }
+
+/* Padroniza aparência de botões de ação (LinkedIn / contato) */
+.contato-acoes .contato-btn,
+.contato-acoes .contato-unificado {
+  position: relative;
+  transition: background .12s ease, color .12s ease, border-color .12s ease, transform .12s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+.contato-acoes .contato-btn span,
+.contato-acoes .contato-unificado img,
+.contato-acoes .contato-btn .material-symbols-rounded { color: var(--azul-principal); }
+
+/* Hover: preencher com cor principal e ícone branco */
+.contato-acoes .contato-btn:hover,
+.contato-acoes .contato-unificado:hover {
+  background: var(--azul-principal);
+  border-color: var(--azul-principal);
+  color: var(--branco);
+  transform: translateY(-2px);
+}
+.contato-acoes .contato-btn:hover span,
+.contato-acoes .contato-unificado:hover svg,
+.contato-acoes .contato-btn:hover .material-symbols-rounded { color: var(--branco); }
+
+/* Tooltip baseado em atributo data-tooltip */
+[data-tooltip] {
+  position: relative;
+}
+[data-tooltip]::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) translateY(6px);
+  bottom: 100%;
+  background: rgba(17,20,24,0.95);
+  color: #fff;
+  padding: 6px 8px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .12s ease, transform .12s ease;
+  z-index: 2200;
+}
+[data-tooltip]::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: calc(100% - 6px);
+  border: 6px solid transparent;
+  border-top-color: rgba(17,20,24,0.95);
+  opacity: 0;
+  transition: opacity .12s ease;
+  z-index: 2200;
+}
+[data-tooltip]:hover::after,
+[data-tooltip]:hover::before {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-4px);
+}
+
+/* Popover com opções de contato (email / telefone) */
+.contato-popover { position: absolute; background: var(--branco); border-radius: 8px; box-shadow: 0 8px 18px rgba(10,10,10,0.12); padding: 8px; min-width: 160px; z-index: 1200; display: none; }
+.contato-popover.show { display: block }
+.contato-popover .opcao { display:flex; align-items:center; gap:8px; padding:6px 8px; border-radius:6px; color:#222; text-decoration:none; cursor:pointer }
+.contato-popover .opcao:hover { background:#f5f5f5 }
+.contato-popover .opcao span.material-symbols-rounded { font-size:18px; color:var(--azul-principal) }
+
+/* Modal de contato */
+.modal-overlay { position: fixed; inset: 0; background: rgba(10,10,10,0.45); display: none; align-items: center; justify-content: center; padding: 24px; z-index: 2000 }
+.modal-overlay[aria-hidden="false"] { display: flex }
+.modal-content { background: transparent; width: 100%; max-width: 980px; border-radius: 12px; overflow: hidden; position: relative }
+.modal-close { position: absolute; right: 12px; top: 12px; background: #fff; border-radius: 8px; border: none; width:40px; height:40px; display:flex; align-items:center; justify-content:center; cursor:pointer; box-shadow: 0 6px 18px rgba(0,0,0,0.12) }
+.modal-close img { width:18px; height:18px }
+.modal-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 }
+.modal-left { background: var(--branco); padding: 28px; color: var(--texto-principal) }
+.modal-left h2 { margin-top:0; font-size:1.6rem }
+.modal-left h4#modal-member-name { color: var(--azul-principal); font-weight:700; margin:6px 0 8px; font-size:1.15rem }
+.modal-left .muted { color: var(--azul-principal); font-size:0.95rem }
+
+/* Ajustes que substituem estilos inline removidos do HTML */
+.modal-left #modal-member-role { margin: 0 0 8px; }
+.modal-left #modal-member-linkedin { display: none; margin-bottom: 8px; }
+.modal-info-item { display:flex; gap:12px; align-items:flex-start; margin:14px 0 }
+.modal-info-item .material-symbols-rounded { font-size:28px; color:var(--laranja) }
+
+/* Tornar email/telefone mais legíveis dentro do modal-left */
+.modal-info-item .muted { color: var(--texto-principal); opacity: 0.95 }
+
+.modal-right { background: linear-gradient(135deg, var(--azul-principal) 0%, var(--verde-limao) 100%); color: var(--branco); padding: 28px; display:flex; flex-direction:column; gap:12px }
+.modal-right h3 { margin:0 0 8px 0 }
+.modal-right label { display:block; font-size:0.95rem; margin-bottom:8px }
+.modal-right input, .modal-right textarea { width:100%; padding:10px 12px; border-radius:8px; border: none; outline:none; background: var(--branco); color: var(--texto-principal); font-weight:500 }
+.modal-right input { height:40px }
+.modal-right textarea { resize:vertical }
+
+/* Placeholder mais escuro para melhor contraste */
+.modal-right input::placeholder,
+.modal-right textarea::placeholder {
+  color: rgba(45,57,72,0.5); /* tom baseado em --texto-principal */
+  font-weight:400;
+}
+
+/* Labels no painel direito levemente translúcidos para contraste com o gradiente */
+.modal-right label { color: rgba(255,255,255,0.95) }
+
+/* Checkbox inline melhorado */
+.checkbox-inline { display:flex; align-items:center; gap:10px; font-size:0.95rem }
+.checkbox-inline input[type="checkbox"] { width:18px; height:18px; accent-color: var(--verde-limao); border-radius:4px }
+.checkbox-inline span { color: rgba(255,255,255,0.95) }
+.modal-terms-link { color: rgba(255,255,255,0.95); text-decoration: underline; margin-left:4px }
+
+.modal-actions { display:flex; gap:12px; align-items:center; margin-top:8px }
+.btn-primary { background: var(--verde-limao); color: var(--azul-principal); border:none; padding:10px 14px; border-radius:8px; cursor:pointer }
+.btn-primary:hover { filter: brightness(0.95) }
+.btn-linkar { color:#fff; text-decoration:underline }
+.attribution { font-size:0.8rem; opacity:0.9 }
+
+@media (max-width:900px) {
+  .modal-grid { grid-template-columns: 1fr; }
+  .modal-right { order: -1 }
+}
+
+/* Tooltip simples (dinâmico via JS) */
+.contato-tooltip { position: absolute; background: #111; color: #fff; padding: 6px 8px; border-radius: 6px; font-size: 0.85rem; transform: translateY(-8px); opacity: 0; transition: opacity .12s ease; pointer-events:none }
+
+/* Responsividade */
+@media (max-width: 1000px) { .contatos-grid { grid-template-columns: repeat(2,1fr); } }
+@media (max-width: 640px) { .contatos-grid { grid-template-columns: 1fr; } .contato-foto { height: 300px } .contatos-intro h1 { font-size:1.6rem } }
+
+/* Reutiliza o padrão de sobreposição de GIF do 'quem-somos' */
+.contato-card .envoltura-foto {
+  position: relative;
+  overflow: hidden;
+  border-radius: 6px;
+  background: #f2f2f2;
+  perspective: 1000px;
+}
+.contato-card .contato-foto {
+  display: block;
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  filter: grayscale(100%);
+  transition: filter 350ms ease, transform 350ms ease;
+  transform-origin: center center;
+}
+.contato-card .sobreposicao-gif {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 300ms ease;
+  pointer-events: none;
+  transform-origin: left center;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+
+.contato-card:hover .contato-foto,
+.contato-card:focus-within .contato-foto,
+.envoltura-foto:focus .contato-foto {
+  filter: none;
+  transform: scale(1.02);
+}
+.contato-card.mostrando .sobreposicao-gif,
+.contato-card:hover .sobreposicao-gif,
+.contato-card:focus-within .sobreposicao-gif {
+  opacity: 1;
+}
+
+@keyframes girarYContato {
+  from { transform: rotateY(-90deg); opacity: 0; }
+  to { transform: rotateY(0deg); opacity: 1; }
+}
+.contato-card.mostrando .sobreposicao-gif,
+.contato-card:hover .sobreposicao-gif,
+.contato-card:focus-within .sobreposicao-gif {
+  will-change: transform, opacity;
+  transform-origin: left center;
+  animation: girarYContato 800ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
