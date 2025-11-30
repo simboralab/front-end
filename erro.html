@@ -9,25 +9,38 @@
 		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 		<link rel="stylesheet" href="static/css/style.css">
+		<link rel="stylesheet" href="static/css/principal.css">
 		<link rel="stylesheet" href="static/css/erro.css">
 	</head>
 	<body>
-		<nav class="nav-menu">
-			<a href="central.html" class="nav-link">Central front-end</a>
-			<a href="#" class="nav-link">Categorias</a>
-			<a href="quem-somos.html" class="nav-link">Quem somos</a>
-			<a href="#" class="nav-link">Contato</a>
-			<div class="auth-buttons">
-				<a href="account.html" class="btn-login">
-					<span class="material-symbols-rounded">login</span>
-					Entrar
+		<header class="hero-header">
+			<div class="header-container">
+				<a href="index.html" class="logo-link" aria-label="Página Inicial do Simbora">
+					<img src="static/img/logo/marca_verde.png" alt="Simbora" class="logo-img-header">
 				</a>
-				<a href="account.html" class="btn-signup">
-					<span class="material-symbols-rounded">person_add</span>
-					Criar conta  
-				</a>
+	
+				<nav class="nav-menu">
+					<a href="central.html" class="nav-link">Central front-end</a>
+					<a href="#" class="nav-link">Categorias</a>
+					<a href="quem-somos.html" class="nav-link">Quem somos</a>
+					<a href="#" class="nav-link">Contato</a>
+					<div class="auth-buttons">
+						<a href="account.html" class="btn-login">
+							<span class="material-symbols-rounded">login</span>
+							Entrar
+						</a>
+						<a href="account.html" class="btn-signup">
+							<span class="material-symbols-rounded">person_add</span>
+							Criar conta  
+						</a>
+					</div>
+				</nav>
+	
+				<button class="menu-toggle" aria-label="Abrir menu">
+					<span class="material-symbols-rounded">menu</span>
+				</button>
 			</div>
-		</nav>
+		</header>
 
 		<main class="erro-main">
 			<div class="erro-card" role="main">
