@@ -27,29 +27,6 @@ body.has-header {
   text-align: center;
 }
 
-button {
-  width: 100%;
-  max-width: 300px;
-  padding: 10px;
-  background: var(--verde-limao);
-  color: var(--azul-principal);
-  font-family: var(--font-body);
-  font-weight: 700;
-  font-size: 16px;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  border: none;
-  border-radius: var(--radius-pill);
-  cursor: pointer;
-  transition: var(--transition);
-  box-shadow: 0 4px 15px rgba(204, 238, 82, 0.4);
-}
-
-button:hover {
-  background: var(--laranja);
-  color: var(--branco);
-}
-
 h1 {
   font-family: var(--font-heading);
   font-size: 6rem;
