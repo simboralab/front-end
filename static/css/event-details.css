@@ -8,22 +8,6 @@ body.has-header {
   background-color: var(--cinza-claro);
 }
 
-.logo {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-.logo-desktop {
-  display: block;
-  max-width: 150px;
-}
-
-.logo-mobile {
-  display: none;
-  max-width: 45px;
-}
-
 /* Ajuste do container para não conflitar com header */
 .main-header + .container {
   margin-top: 0;
@@ -1460,16 +1444,6 @@ h1 {
   .btn-whatsapp {
     order: 1;
   }
-
-  .logo-desktop {
-    display: none;
-  }
-
-  .logo-mobile {
-    display: block;
-  }
-   
-  
 }
 
 /* Footer - movido para style.css */

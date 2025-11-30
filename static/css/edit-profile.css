@@ -497,12 +497,4 @@ input:checked+.slider:before {
     .form {
         gap: var(--spacing-sm);
     }
-
-    .logo-desktop {
-        display: none;
-    }
-
-    .logo-mobile {
-        display: block;
-    }
 }
