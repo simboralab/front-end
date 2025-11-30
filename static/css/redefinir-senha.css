@@ -1,16 +1,9 @@
-/* =============================================
-   BODY ESPECÍFICO DA AUTENTICAÇÃO
-   ============================================= */
 
 body {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
-/* =============================================
-   CONTAINER PRINCIPAL DA AUTENTICAÇÃO
-   ============================================= */
 
 .container {
   width: 100%;
@@ -20,10 +13,6 @@ body {
   position: relative;
   overflow: hidden;
 }
-
-/* =============================================
-   SEÇÃO DA IMAGEM (50% Esquerda)
-   ============================================= */
 
 .image-section {
   position: relative;
@@ -48,7 +37,6 @@ body {
   z-index: 1;
 }
 
-/* Gradiente sobre a imagem */
 .overlay-gradient {
   position: absolute;
   top: 0;
@@ -65,7 +53,6 @@ body {
   mix-blend-mode: multiply;
 }
 
-/* Logo Simbora no canto superior esquerdo */
 .logo-overlay {
   position: absolute;
   top: 40px;
@@ -92,11 +79,6 @@ body {
   display: block;
 }
 
-.logo-overlay a:hover .logo-simbora {
-  transform: scale(1);
-}
-
-/* Texto hero na parte inferior */
 .hero-text {
   position: absolute;
   bottom: 60px;
@@ -126,10 +108,6 @@ body {
   max-width: 500px;
 }
 
-/* =============================================
-   SEÇÃO DO FORMULÁRIO (50% Direita)
-   ============================================= */
-
 .form-section {
   width: 50%;
   height: 100%;
@@ -152,17 +130,8 @@ body {
   box-sizing: border-box;
 }
 
-/* =============================================
-   FORMULÁRIOS DE AUTENTICAÇÃO
-   ============================================= */
-
 .form-card {
-  display: none;
   animation: fadeInUp 0.5s ease;
-}
-
-.form-card.active {
-  display: block;
 }
 
 .form-card h1 {
@@ -183,20 +152,18 @@ body {
   margin-bottom: 32px;
   text-align: center;
   line-height: 1.5;
-  font-weight: 400;
 }
 
 form {
   margin-top: 0;
 }
-/* Inputs de linha única (login) */
+
 .form-card .input-group {
   width: 100%;
   margin-bottom: var(--spacing-sm);
   box-sizing: border-box;
 }
 
-/* Garantir que inputs não ultrapassem o container */
 .form-wrapper .input-group,
 .form-wrapper .input-container {
   max-width: 100%;
@@ -209,123 +176,20 @@ form {
   box-sizing: border-box;
 }
 
-/* Espaçamento para campos individuais (não em row-inputs) */
-.form-card form > .input-container:not(.row-inputs .input-container) {
+.form-card form > .input-container {
   margin-bottom: 16px;
 }
 
-/* Garantir espaçamento consistente entre todos os campos */
 .form-card .input-container {
   margin-bottom: 0;
 }
 
 .form-card .row-inputs {
   margin-bottom: 16px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
 }
-
-.form-card .row-inputs .input-container {
-  margin-bottom: 0;
-}
-
-/* =============================================
-   FOOTER ESPECÍFICO DA AUTENTICAÇÃO
-   ============================================= */
-
-footer {
-  margin-top: 36px;
-  text-align: center;
-}
-
-footer p {
-  font-family: var(--font-body);
-  font-size: 15px;
-  color: var(--cinza-escuro);
-  margin-bottom: 14px;
-  font-weight: 400;
-}
-
-footer a {
-  font-family: var(--font-body);
-  color: var(--azul-principal);
-  text-decoration: none;
-  font-weight: 600;
-  transition: color var(--transition);
-}
-
-footer a:hover {
-  color: var(--laranja);
-}
-
-.links {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  margin-top: 20px;
-  font-size: 13px;
-  color: var(--cinza-medio);
-}
-
-.links span {
-  color: var(--cinza-medio);
-}
-
-.links a {
-  color: var(--cinza-medio);
-  font-weight: 400;
-  text-decoration: none;
-}
-
-.links a:hover {
-  color: var(--azul-principal);
-  text-decoration: underline;
-}
-
-/* =============================================
-   EFEITOS DE TRANSIÇÃO ENTRE LOGIN E CADASTRO
-   ============================================= */
-
-/* Estado padrão: Cadastro */
-.container.cadastro-ativo .form-section {
-  transform: translateX(0);
-}
-
-.container.cadastro-ativo .image-section {
-  transform: translateX(0);
-}
-
-/* Estado Login: Inverte as posições */
-.container.login-ativo .form-section {
-  transform: translateX(-100%);
-}
-
-.container.login-ativo .image-section {
-  transform: translateX(100%);
-}
-
-/* =============================================
-   CONTROLE DE VISIBILIDADE DOS FOOTERS
-   ============================================= */
-
-.cadastro-footer {
-  display: block;
-}
-
-.login-footer {
-  display: none;
-}
-
-.container.login-ativo .cadastro-footer {
-  display: none;
-}
-
-.container.login-ativo .login-footer {
-  display: block;
-}
-
-/* =============================================
-   ANIMAÇÕES
-   ============================================= */
 
 @keyframes fadeInUp {
   from {
@@ -337,10 +201,6 @@ footer a:hover {
     transform: translateY(0);
   }
 }
-
-/* =============================================
-   RESPONSIVIDADE ESPECÍFICA DA AUTENTICAÇÃO
-   ============================================= */
 
 @media (max-width: 1200px) {
   .hero-text h2 {
@@ -378,17 +238,6 @@ footer a:hover {
     min-height: 100vh;
     margin-top: 0;
     padding-top: 0;
-  }
-
-  /* Desabilita transformações que movem as seções na versão mobile */
-  .container.login-ativo .form-section,
-  .container.cadastro-ativo .form-section {
-    transform: translateX(0) !important;
-  }
-
-  .container.login-ativo .image-section,
-  .container.cadastro-ativo .image-section {
-    transform: translateX(0) !important;
   }
 
   .image-section,
@@ -442,7 +291,6 @@ footer a:hover {
   }
 
   .row-inputs {
-    grid-template-columns: 1fr;
     gap: 12px;
   }
 
@@ -489,79 +337,8 @@ footer a:hover {
   }
 
   .input-container {
-    display: block;
-    justify-content: column;
+    display: flex;
+    flex-direction: column;
     gap: 10px;
   }
-
-  .btn-primary {
-    padding: 14px 20px;
-    font-size: 14px;
-    min-width: auto;
-    width: 100%;
-  }
-
-  .row-inputs {
-    gap: 10px;
-  }
-}
-
-/* =============================================
-   LINKS DE ALTERNÂNCIA ENTRE FORMULÁRIOS
-   ============================================= */
-
-.form-switch {
-  margin-top: 1rem;
-  text-align: center;
-}
-
-.form-switch p {
-  margin: 0;
-  color: var(--cinza-escuro, #4a5568);
-  font-family: var(--font-body);
-  font-size: 15px;
-  font-weight: 400;
-}
-
-.btn-link {
-  background: none;
-  border: none;
-  color: var(--azul-principal, #004aad);
-  text-decoration: underline;
-  cursor: pointer;
-  padding: 0;
-  font-family: var(--font-body);
-  font-weight: 600;
-}
-
-.cadastro-link {
-  display: block;
-  justify-self: unset;
-}
-
-.btn-link:hover {
-  color: var(--laranja, #fa7625);
-}
-
-.btn-link:focus {
-  outline: 2px solid var(--azul-principal, #004aad);
-  outline-offset: 2px;
-  border-radius: 2px;
-}
-button {
-  width: 100%;
-  max-width: 300px;
-  padding: 10px;
-  background: var(--verde-limao);
-  color: var(--azul-principal);
-  font-family: var(--font-body);
-  font-weight: 700;
-  font-size: 16px;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  border: none;
-  border-radius: var(--radius-pill);
-  cursor: pointer;
-  transition: var(--transition);
-  box-shadow: 0 4px 15px rgba(204, 238, 82, 0.4);
 }
