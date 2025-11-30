@@ -16,6 +16,22 @@ body.has-header {
     overflow-x: hidden;
 }
 
+.logo {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.logo-desktop {
+    display: block;
+    max-width: 150px;
+}
+
+.logo-mobile {
+    display: none;
+    max-width: 45px;
+}
+
 
 /* Menu Dropdown do Perfil */
 
@@ -461,7 +477,7 @@ input:checked+.slider:before {
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 580px) {
     .main-header ~ .container {
         width: 95%;
         padding: 20px;
