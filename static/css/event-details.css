@@ -1332,6 +1332,9 @@ h1 {
   .container {
     padding: var(--spacing-sm);
   }
+  img{
+    width: 200PX;
+  }
 
   .banner {
     height: 180px;
