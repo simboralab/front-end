@@ -1,8 +1,4 @@
-/* listagem.css - estilos básicos para a tela de explorar/listagem */
 
-:root {
-  /* não redeclarar cores globais — confiar em static/css/style.css se existir */
-}
 
 .container {
   width: 94%;
@@ -119,7 +115,7 @@
 .filters-toolbar .pill{ transition: background 160ms ease, transform 160ms ease, box-shadow 160ms ease, color 160ms ease; }
 .filters-toolbar .pill:focus{ box-shadow: 0 6px 20px rgba(0,74,173,0.06); }
 
-/* Cards - hover e transições mais polidas */
+/* Cards - hover e transições */
 .card{ transition: transform 240ms ease, box-shadow 240ms ease, border-color 240ms ease; will-change: transform; }
 .card:hover{ transform: translateY(-6px); box-shadow: 0 18px 40px rgba(12,38,76,0.12); border-color: rgba(0,74,173,0.06); }
 .card:focus{ outline: none; box-shadow: 0 0 0 4px rgba(0,74,173,0.06); }
@@ -145,7 +141,7 @@
 .filter-dropdown-footer .btn-visualizar{ background:var(--azul-principal,#0066cc); color:#fff; border:none; margin-right:8px; }
 .filter-dropdown-footer .btn-limpar{ color:var(--texto-principal,#111); }
 
-/* scrollbar leve */
+
 .filter-dropdown ul::-webkit-scrollbar{ width:8px; }
 .filter-dropdown ul::-webkit-scrollbar-thumb{ background:linear-gradient(180deg, #cbd6e0, #aebfcf); border-radius:6px; }
 
@@ -187,19 +183,18 @@
 .card-actions button{ background:transparent; border:1px solid var(--cinza-claro,#e6eef4); padding:6px 8px; border-radius:8px; display:inline-flex; align-items:center; justify-content:center; gap:6px; cursor:pointer; }
 .card-actions .material-symbols-rounded{ font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
 
-/* favorite button */
+/* botão favoritar */
 .btn-fav{ color:var(--cinza-escuro); transition: background 160ms ease, color 160ms ease, transform 120ms ease; }
 .btn-fav:hover{ background:var(--cinza-claro); color: var(--laranja); transform: translateY(-2px); }
 .btn-fav:focus{ outline:none; box-shadow:0 0 0 4px rgba(0,74,173,0.06); }
 .btn-fav.favorited{ background: linear-gradient(90deg,var(--laranja),var(--verde-limao)); color:#fff; box-shadow: 0 6px 20px rgba(250,118,37,0.12); }
 .btn-fav.favorited .material-symbols-rounded{ color: #fff; }
 
-/* share button */
+/* link de compartilhar */
 .btn-share{ color:var(--cinza-escuro); transition: background 160ms ease, color 160ms ease, transform 120ms ease; }
 .btn-share:hover{ background:var(--cinza-claro); color:var(--azul-principal); transform: translateY(-2px); }
 .btn-share:focus{ outline:none; box-shadow:0 0 0 4px rgba(0,74,173,0.06); }
 
-/* small toast for feedback */
 .lf-toast{ opacity:1; }
 
 /* badge overlay */
@@ -251,7 +246,7 @@
 .card-category.cat-tecnologia{ background: linear-gradient(90deg,#06b6d4,#0891b2); }
 .card-category.cat-educacao{ background: linear-gradient(90deg,#34d399,#10b981); }
 
-/* ícone circular simples antes do texto (decorativo) */
+/* ícone circular simples antes do texto */
 .card-category::before{ content:''; width:8px; height:8px; border-radius:50%; background: rgba(255,255,255,0.6); display:inline-block; margin-left:4px; transform: translateX(-4px); }
 
 @media (max-width: 520px){
@@ -288,7 +283,7 @@
 .listagem-pagination{ text-align:center; margin-top:20px; }
 .listagem-pagination button{ background:var(--azul-principal,#0066cc); color:#fff; padding:10px 16px; border-radius:8px; border:none; }
 
-/* responsive */
+/* responsividade */
 @media (max-width: 1100px){
   .listagem-grid{ grid-template-columns: repeat(3, 1fr); }
 }
