@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Cultura • Explorar • Simbora</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="stylesheet" href="static/css/style.css">
+  <link rel="stylesheet" href="static/css/principal.css">
+  <link rel="stylesheet" href="static/css/listagem.css">
+</head>
+<body>
+  <header class="hero-header">
+    <div class="header-container">
+      <a href="index.html" class="logo-link" aria-label="Página Inicial do Simbora">
+        <img src="static/img/logo/marca_verde.png" alt="Simbora" class="logo-img-header">
+      </a>
+      <nav class="nav-menu">
+        <a href="central.html" class="nav-link">Central front-end</a>
+        <a href="create-event.html" class="nav-link">Criar evento</a>
+        <a href="#" class="nav-link">Como funciona?</a>
+        <a href="quem-somos.html" class="nav-link">Quem somos?</a>
+        <a href="contatos.html" class="nav-link">Contatos</a>
+        <div class="auth-buttons">
+          <a href="account.html" class="btn-login">
+            <span class="material-symbols-rounded">login</span>
+            Entrar
+          </a>
+          <a href="account.html" class="btn-signup">
+            <span class="material-symbols-rounded">person_add</span>
+            Criar conta
+          </a>
+        </div>
+      </nav>
+      <button class="menu-toggle" aria-label="Abrir menu">
+        <span class="material-symbols-rounded">menu</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="container main-content">
+    <h1 id="page-title">Cultura</h1>
+    <div id="filters-toolbar" class="filters-toolbar" aria-label="Filtros rápidos"></div>
+    <section id="listagem-area" class="listagem-area"><section id="listagem-grid" class="listagem-grid" aria-live="polite"></section></section>
+    <div id="pagination" class="listagem-pagination" aria-hidden="false"></div>
+  </main>
+
+  <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-logo-section">
+                    <img src="static/img/logo/marca_azul.png" alt="Simbora" class="footer-logo-img">
+                    <p>Conectando pessoas aos melhores rolês da cidade.</p>
+                </div>
+                <div class="footer-nav">
+                    <h4>Explorar</h4>
+                    <a href="index.html">Início</a>
+                    <a href="#">Buscar Eventos</a>
+                    <a href="create-event.html">Criar Evento</a>
+                </div>
+                <div class="footer-nav">
+                    <h4>Suporte</h4>
+                    <a href="#">Central de Ajuda</a>
+                    <a href="#">Termos de Uso</a>
+                    <a href="#">Privacidade</a>
+                </div>
+                <div class="footer-social">
+                    <h4>Siga a gente</h4>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Instagram"><span class="material-symbols-rounded">photo_camera</span></a>
+                        <a href="#" aria-label="Twitter"><span class="material-symbols-rounded">alternate_email</span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Simbora App. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+  <script src="static/js/explorar-cultura.js"></script>
+  <script src="static/js/listagem.js" defer></script>
+</body>
+</html>
