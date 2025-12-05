@@ -1110,3 +1110,27 @@ label {
     color: var(--laranja);
     font-variation-settings: 'FILL' 1;
 }
+.error-message {
+    max-width: 100%;
+    overflow-wrap: break-word;
+    white-space: normal;
+}
+.row-inputs,
+.input-container,
+.input-group {
+    min-width: 0 !important;
+}
+.input-group .icon-error,
+.input-group .icon-check {
+    position: absolute;
+    right: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0;
+}
+@media (max-width: 480px) {
+    .input-group {
+        padding: 14px 18px;
+        gap: 10px;
+    }
+}
