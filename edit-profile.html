@@ -5,16 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Perfil - Simbora</title>
-    
+
     <!-- Google Fonts: Roboto Condensed + Poppins -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto+Condensed:wght@300;400;700&display=swap"
+        rel="stylesheet">
+
     <!-- Estilos gerais do Simbora -->
     <link rel="stylesheet" href="static/css/style.css">
     <!-- Material Symbols Rounded -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <!-- Estilos específicos da página -->
     <link rel="stylesheet" href="static/css/edit-profile.css">
 </head>
@@ -40,22 +43,23 @@
 
             <div class="header-profile">
                 <div class="profile-info" id="profile-trigger">
-                    <img src="https://avatars.githubusercontent.com/u/187967201?v=4" alt="Perfil" class="profile-avatar">
+                    <img src="https://avatars.githubusercontent.com/u/187967201?v=4" alt="Perfil"
+                        class="profile-avatar">
                     <div class="profile-details">
-                        <span class="profile-name">Juju</span>
-                        <span class="profile-pronouns">Ela/Dela</span>
+                        <span class="profile-name">Edson</span>
+                        <span class="profile-pronouns">Ele/Dele</span>
                     </div>
                     <span class="material-symbols-rounded profile-arrow">expand_more</span>
                 </div>
-                
+
                 <!-- Menu Dropdown -->
                 <div class="profile-dropdown" id="profile-menu">
                     <div class="dropdown-header">
-                        <img src="https://avatars.githubusercontent.com/u/187967201?v=4" alt="Juju"
+                        <img src="https://avatars.githubusercontent.com/u/187967201?v=4" alt="Edson"
                             class="dropdown-avatar">
                         <div class="dropdown-user-info">
-                            <span class="dropdown-name">Juju</span>
-                            <span class="dropdown-pronouns">Ela/Dela</span>
+                            <span class="dropdown-name">Edson</span>
+                            <span class="dropdown-pronouns">Ele/Dele</span>
                         </div>
                     </div>
                     <div class="dropdown-divider"></div>
@@ -116,23 +120,25 @@
             <button class="btn-alter-foto">Alterar foto</button>
         </div>
 
-        <form class="form">
+        <form class="form" id="edit-profile-form">
 
             <h2 class="section-title">Informações Pessoais</h2>
 
-            <label>
+            <label id="id_nome">
                 Nome Social
-                <input type="text" id="nome" placeholder="Informe seu nome social">
+                <input type="text" id="id_nome" name="nome" placeholder="Informe seu nome social" required>
             </label>
+            <span id="erro-nome" class="error-message" role="alert"></span>
 
-            <label>
+            <label id="id_cidade">
                 Cidade
-                <input type="text" placeholder="Informe sua cidade">
+                <input type="text" id="id_cidade" name="cidade" placeholder="Informe sua cidade" required>
             </label>
+            <span id="erro-cidade" class="error-message" role="alert"></span>
 
-            <label>
+            <label id="id_estado">
                 Estado
-                <select name="estado" id="estado">
+                <select name="estado" id="id_estado" required>
                     <option value="">-- Selecione o Estado --</option>
                     <option value="">SP</option>
                     <option value="">PE</option>
@@ -163,26 +169,28 @@
                     <option value="">ES</option>
                 </select>
             </label>
+            <span id="erro-estado" class="error-message" role="alert"></span>
 
             <label class="full-width">
                 Descrição (Bio)
-                <textarea placeholder="Fale mais sobre você..."></textarea>
+                <textarea id="id_bio" placeholder="Fale mais sobre você..."></textarea>
             </label>
 
             <h2 class="section-title">Identidade e Acessibilidade</h2>
 
-            <label>
+            <label id="id_genero">
                 Gênero
-                <select>
+                <select id="id_genero" name="genero" required>
                     <option>-- Selecione seu Gênero --</option>
                     <option>Mulher Cis</option>
                     <option>Homem Cis</option>
                     <option>Mulher Trans</option>
                     <option>Homem Trans</option>
                     <option>Não-binário</option>
-                    <option>Outres</option>
+                    <option>Prefiro não informar</option>
                 </select>
             </label>
+            <span id="erro-genero" class="error-message" role="alert"></span>
 
             <div class="toggle-box">
                 <label class="toggle">
@@ -207,7 +215,7 @@
             </div>
 
             <div class="button">
-                <button class="btn-submit" value="enviar">Salvar Alterações</button>
+                <button type="submit" class="btn-submit">Salvar Alterações</button>
             </div>
 
         </form>
@@ -237,8 +245,10 @@
                 <div class="footer-social">
                     <h4>Siga a gente</h4>
                     <div class="social-icons">
-                        <a href="#" aria-label="Instagram"><span class="material-symbols-rounded">photo_camera</span></a>
-                        <a href="#" aria-label="Twitter"><span class="material-symbols-rounded">alternate_email</span></a>
+                        <a href="#" aria-label="Instagram"><span
+                                class="material-symbols-rounded">photo_camera</span></a>
+                        <a href="#" aria-label="Twitter"><span
+                                class="material-symbols-rounded">alternate_email</span></a>
                     </div>
                 </div>
             </div>
@@ -251,6 +261,7 @@
     <!-- JavaScript -->
     <script src="static/js/principal.js"></script>
     <script src="static/js/edit-profile.js"></script>
+    <script src="static/js/validation-edit-profile.js"></script>
 </body>
 
 </html>
