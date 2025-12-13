@@ -21,35 +21,93 @@
     <link rel="stylesheet" href="static/css/style.css">
     <!-- Estilos específicos da página principal -->
     <link rel="stylesheet" href="static/css/principal.css">
+    <link rel="stylesheet" href="static/css/index-logado.css">
 </head>
 
 <body>
     <!-- Header de Navegação -->
-    <header class="hero-header">
+   <header class="main-header">
         <div class="header-container">
-            <a href="index.html" class="logo-link" aria-label="Página Inicial do Simbora">
-                <img src="static/img/logo/marca_verde.png" alt="Simbora" class="logo-img-header">
-            </a>
+            <div class="header-logo">
+                <a href="index.html" class="logo-link">
+                    <picture>
+                        <source media="(max-width: 480px)" srcset="static/img/logo/imagem.png">
+                        <img src="static/img/logo/marca_azul.png" alt="Simbora" class="logo-img">
+                    </picture>
+                </a>
+            </div>
 
-            <nav class="nav-menu">
-				<a href="#" class="nav-link">Categorias</a>
+            <nav class="header-nav">
+                <a href="index-logado.html" class="nav-link">Início</a>
                 <a href="quem-somos.html" class="nav-link">Quem somos</a>
-                <a href="#" class="nav-link">Contato</a>
-                <div class="auth-buttons">
-                    <a href="account.html" class="btn-login">
-                        <span class="material-symbols-rounded">login</span>
-                        Entrar
-                    </a>
-                    <a href="account.html" class="btn-signup">
-                        <span class="material-symbols-rounded">person_add</span>
-                        Criar conta  
-                    </a>
-                </div>
+                <a href="create-event.html" class="nav-link">Criar</a>
             </nav>
 
-            <button class="menu-toggle" aria-label="Abrir menu">
-                <span class="material-symbols-rounded">menu</span>
-            </button>
+            <div class="header-profile">
+                <div class="profile-info" id="profile-trigger">
+                    <img src="https://avatars.githubusercontent.com/u/187967201?v=4" alt="Perfil"
+                        class="profile-avatar">
+                    <div class="profile-details">
+                        <span class="profile-name">Edson</span>
+                        <span class="profile-pronouns">Ele/Dele</span>
+                    </div>
+                    <span class="material-symbols-rounded profile-arrow">expand_more</span>
+                </div>
+
+                <!-- Menu Dropdown -->
+                <div class="profile-dropdown" id="profile-menu">
+                    <div class="dropdown-header">
+                        <img src="https://avatars.githubusercontent.com/u/187967201?v=4" alt="Edson"
+                            class="dropdown-avatar">
+                        <div class="dropdown-user-info">
+                            <span class="dropdown-name">Edson</span>
+                            <span class="dropdown-pronouns">Ele/Dele</span>
+                        </div>
+                    </div>
+                    <div class="dropdown-divider"></div>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="edit-profile.html" class="dropdown-item">
+                                <span class="material-symbols-rounded">person</span>
+                                <span>Meu perfil</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="events-created.html" class="dropdown-item">
+                                <span class="material-symbols-rounded">event</span>
+                                <span>Meus eventos</span>
+                            </a>
+                        </li>
+                        <li>
+                            <span class="dropdown-item disabled">
+                                <span class="material-symbols-rounded">bookmark</span>
+                                <span>Eventos salvos</span>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="dropdown-item disabled">
+                                <span class="material-symbols-rounded">settings</span>
+                                <span>Configurações</span>
+                            </span>
+                        </li>
+                    </ul>
+                    <div class="dropdown-divider"></div>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="central-ajuda.html" class="dropdown-item">
+                                <span class="material-symbols-rounded">help</span>
+                                <span>Ajuda</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="account.html" class="dropdown-item logout">
+                                <span class="material-symbols-rounded">logout</span>
+                                <span>Sair</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </header>
 

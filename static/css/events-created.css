@@ -17,6 +17,11 @@ body.has-header {
     padding: 20px 16px;
 }
 
+.link-vizualizar-evento{
+    color: white;
+    text-decoration: none;
+}
+
 .events-created-main > * {
     width: 100%;
     max-width: 1152px;

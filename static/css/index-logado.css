@@ -33,6 +33,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  color: var(--azul-principal);
 }
 
 .logo-link {
@@ -77,7 +78,7 @@ body {
   font-family: var(--font-body);
   font-size: 0.875rem;
   font-weight: 500;
-  color: var(--branco);
+  color: var(--azul-principal);
   text-decoration: none;
   transition: color var(--transition);
   display: flex;
@@ -86,7 +87,7 @@ body {
 }
 
 .nav-link:hover {
-  color: var(--verde-limao);
+  color: var(--laranja);
 }
 
 /* Botões de autenticação */
@@ -1148,7 +1149,7 @@ body {
     display: none;
   }
 
-.hero-header .nav-menu.active {
+  .hero-header .nav-menu.active {
     display: flex;
     flex-direction: column;
     position: absolute;
@@ -1168,23 +1169,7 @@ body {
   }
   
   .auth-buttons {
-    display: flex;
-    margin-left: 12px;
-  }
-  .btn-signup {
     display: none;
-  }
-    .header-container {
-    gap: 10px;
-  }
-
-    .btn-login {
-    padding: 6px 14px;
-    font-size: 13px;
-  }
-
-    .logo-img-header {
-    height: 46px;
   }
   
   .hero-title {

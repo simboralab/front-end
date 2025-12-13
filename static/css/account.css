@@ -21,6 +21,9 @@ body {
   position: relative;
   overflow: hidden;
 }
+.link-cadastre-se:hover{
+  color: white;
+}
 
 /* =============================================
    SEÇÃO DA IMAGEM (50% Esquerda)
